@@ -50,19 +50,34 @@
 	--text-h2: calc(var(--text-h3) * var(--typescale));
 	--text-h1: calc(var(--text-h2) * var(--typescale));
 	--animate-slide-fade-in: slide-fade-in 500ms ease-in-out;
+	--animate-slide-in: slide-in 500ms ease-in;
 	@keyframes slide-fade-in {
 		0% {
 			opacity: 0.5;
-			translate: 0 10%;
+			translate: 0 4%;
 		}
 
 		75% {
-			translate: 0 -5%;
+			translate: 0 -2%;
 		}
 
 		to {
 			opacity: 1;
-			rotate: 0;
+			translate: 0 0;
+		}
+	}
+
+	@keyframes slide-in {
+		0% {
+			opacity: 0.75;
+			translate: 0 4%;
+		}
+
+		75% {
+			translate: 0 -2%;
+		}
+
+		to {
 			translate: 0 0;
 		}
 	}
