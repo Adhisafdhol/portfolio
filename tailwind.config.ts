@@ -9,8 +9,14 @@ export default {
 	],
 	theme: {
 		extend: {
-			fontFamily: {},
-			colors: {},
+			fontFamily: {
+				sans: ["sans-serif"],
+			},
+			colors: {
+				brand: {
+					"1": "var(--brand-1)",
+				},
+			},
 			fontSize: {},
 			backgroundImage: {},
 			animation: {},
