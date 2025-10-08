@@ -16,6 +16,14 @@
 		var(--color-bg-1),
 		var(--color-bg-2)
 	);
+	--typescale: 1.333;
+	--text-p: 1rem;
+	--text-h6: calc(var(--text-p) * var(--typescale));
+	--text-h5: calc(var(--text-h6) * var(--typescale));
+	--text-h4: calc(var(--text-h5) * var(--typescale));
+	--text-h3: calc(var(--text-h4) * var(--typescale));
+	--text-h2: calc(var(--text-h3) * var(--typescale));
+	--text-h1: calc(var(--text-h2) * var(--typescale));
 }
 
 base {
