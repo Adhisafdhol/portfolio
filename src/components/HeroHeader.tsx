@@ -1,7 +1,77 @@
+import { useEffect, useRef, useState } from "react";
+
+const fromGradients: string[] = [
+	"from-brand-1",
+	"from-brand-2",
+	"from-brand-3",
+	"from-brand-4",
+	"from-brand-5",
+];
+
+const toGradients: string[] = [
+	"to-brand-1",
+	"to-brand-2",
+	"to-brand-3",
+	"to-brand-4",
+	"to-brand-5",
+];
+
 const HeroHeader = () => {
+	const gradientRef = useRef<null | HTMLParagraphElement>(null);
+	const [fromGradient, setFromGradient] = useState<string>(fromGradients[2]);
+	const [toGradient, setToGradient] = useState<string>(toGradients[0]);
+
+	useEffect(() => {
+		const updateGradient = () => {
+			const indexFrom: number = Math.floor(
+				Math.random() * fromGradients.length,
+			);
+			const indexTo: number = Math.floor(Math.random() * toGradients.length);
+			setFromGradient(fromGradients[indexFrom]);
+			setToGradient(toGradients[indexTo]);
+		};
+
+		const intervalId = setInterval(updateGradient, 15 * 1000);
+
+		gradientRef.current?.classList.remove("animate-slide-fade-in");
+		gradientRef.current?.classList.add("animate-slide-fade-in");
+
+		return () => {
+			clearInterval(intervalId);
+		};
+	});
+
 	return (
-		<div className="bg-bg-gr-1 relative min-h-[100dvh] min-w-full">
-			<div className="absolute max-h-[100dvh] max-w-[100dvw] overflow-hidden">
+		<header
+			className="bg-bg-gr-1 relative flex min-h-[100dvh] min-w-full
+		flex-col items-start justify-center gap-[64px] p-[64px]">
+			<div className="flex flex-col items-start">
+				<h1 className="text-h1 animate-slide-in font-black">Adhis Afdhol</h1>
+				<p
+					ref={gradientRef}
+					className={
+						"text-h3 bg-linear-to-r bg-clip-text font-bold text-[transparent] transition-all" +
+						" " +
+						fromGradient +
+						" " +
+						toGradient
+					}>
+					Fullstack Developer
+				</p>
+			</div>
+			<p className="text-h5 mb-[16px] text-start">
+				Exploring The Art of <span className="font-light italic">Creating</span>
+				<br />
+				<span className="text-h3 font-semibold">Innovative,</span>
+				<br />
+				<span className="text-h3 font-semibold">Intuitive,</span>
+				<br />
+				<span className="text-h3 font-semibold">and Maintainable</span>
+				<br />
+				<span className="text-h4">software.</span>
+			</p>
+
+			<div className="absolute top-0 left-0 max-h-[100dvh] max-w-[100dvw] overflow-hidden">
 				<svg
 					width="1920"
 					height="1080"
@@ -60,13 +130,13 @@ const HeroHeader = () => {
 									attributeName="stop-color"
 									values="#D40028;#3BC1E7;#FEDE17;#5306D8;#070707;#000000;#070707;#5306D8;
 									#FEDE17;#3BC1E7;#D40028;"
-									dur="60s"
+									dur="180s"
 									repeatCount="indefinite"
 								/>
 								<animate
 									attributeName="offset"
 									values="0.764423;1;0.6;1.764423;"
-									dur="60s"
+									dur="180s"
 									repeatCount="indefinite"
 								/>
 							</stop>
@@ -77,7 +147,7 @@ const HeroHeader = () => {
 					</defs>
 				</svg>
 			</div>
-		</div>
+		</header>
 	);
 };
 
