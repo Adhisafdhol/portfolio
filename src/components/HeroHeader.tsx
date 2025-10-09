@@ -1,4 +1,7 @@
 import { useEffect, useRef, useState } from "react";
+import HeaderScrambleText from "./HeaderScrambleText";
+import HeroHeading from "./HeroHeading";
+import RollingText from "./RollingText";
 
 const fromGradients: string[] = [
 	"from-brand-2",
@@ -36,7 +39,6 @@ const HeroHeader = () => {
 			} else {
 				setFromGradientIndex(fromGradientIndex + 1);
 			}
-			console.log(fromGradientIndex);
 		};
 
 		const intervalId = setInterval(updateGradient, 30 * 1000);
@@ -50,36 +52,48 @@ const HeroHeader = () => {
 	}, [fromGradientIndex, isReversed]);
 
 	return (
-		<header
-			className="bg-bg-gr-1 relative flex min-h-[100dvh] min-w-full
-		flex-col items-start justify-center gap-[64px] p-[64px]">
-			<div className="z-10 flex flex-col items-start">
-				<h1 className="text-h1 animate-slide-in font-black">Adhis Afdhol</h1>
-				<p
-					ref={gradientRef}
-					className={
-						`text-h3 bg-linear-to-r bg-clip-text font-bold text-[transparent] 
+		<>
+			<header
+				className={`bg-bg-gr-1 relative flex min-h-[100dvh] min-w-full
+		flex-col items-start justify-center gap-[64px] p-[64px]`}>
+				<div className="z-10 flex flex-col items-start">
+					<HeroHeading>Adhis Afdhol</HeroHeading>
+					<p
+						ref={gradientRef}
+						className={
+							`text-h3 bg-linear-to-r bg-clip-text font-bold text-[transparent] 
 						transition-all` +
-						" " +
-						fromGradients[fromGradientIndex] +
-						" " +
-						toGradients[0]
-					}>
-					Fullstack Developer
+							" " +
+							fromGradients[fromGradientIndex] +
+							" " +
+							toGradients[0]
+						}>
+						Fullstack Developer
+					</p>
+				</div>
+				<p className="text-h5 test text-block z-10 mb-[16px] text-start">
+					<span className="flex gap-[8px]">
+						Exploring The Art of
+						<RollingText classes="font-light italic">Creating</RollingText>
+					</span>
+					<HeaderScrambleText
+						classes="text-h3 font-semibodl"
+						text="Innovative,"
+					/>
+					<br />
+					<HeaderScrambleText
+						classes="text-h3 font-semibodl"
+						text="Intuitive,"
+					/>
+					<br />
+					<HeaderScrambleText
+						classes="text-h3 font-semibodl"
+						text="and Maintainable"
+					/>
+					<br />
+					<span className="text-h4">software.</span>
 				</p>
-			</div>
-			<p className="text-h5 z-10 mb-[16px] text-start">
-				Exploring The Art of <span className="font-light italic">Creating</span>
-				<br />
-				<span className="text-h3 font-semibold">Innovative,</span>
-				<br />
-				<span className="text-h3 font-semibold">Intuitive,</span>
-				<br />
-				<span className="text-h3 font-semibold">and Maintainable</span>
-				<br />
-				<span className="text-h4">software.</span>
-			</p>
-
+			</header>
 			<div
 				className={`pointer-events-none absolute top-0 left-0 max-h-[100dvh] 
 				max-w-[100dvw] overflow-hidden`}>
@@ -173,7 +187,7 @@ const HeroHeader = () => {
 					</svg>
 				</div>
 			</div>
-		</header>
+		</>
 	);
 };
 
