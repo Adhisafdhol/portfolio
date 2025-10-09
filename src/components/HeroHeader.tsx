@@ -4,8 +4,8 @@ import HeroHeading from "./HeroHeading";
 import RollingText from "./RollingText";
 
 const fromGradients: string[] = [
-	"from-brand-2",
 	"from-brand-3",
+	"from-brand-2",
 	"from-brand-5",
 	"from-brand-4",
 	"from-brand-3",
@@ -99,7 +99,8 @@ const HeroHeader = () => {
 				max-w-[100dvw] overflow-hidden`}>
 				<div className="relative top-0 h-[100dvh] w-[100vw]">
 					<svg
-						className="calc(100dvh * 1.33) absolute top-0 right-0 z-0 h-[100dvh]"
+						className="calc(100dvh * 1.33) absolute top-0 right-0 z-0 
+						h-[100dvh]"
 						viewBox="0 0 1440 1080"
 						fill="none"
 						version="1.1"
@@ -108,7 +109,8 @@ const HeroHeader = () => {
 						<g
 							clip-path="url(#clip0_689_81)"
 							id="g2"
-							transform="matrix(1.0005956,0,0,1.0005956,-421.14355,-3.828639e-4)">
+							transform="matrix(1.0005956,0,0,1.0005956,-421.14355,
+							-3.828639e-4)">
 							<path
 								d="m 1364.8506,347.99304 c -69.8504,87.71962 -43.2385,236.3873 
        -126.2,311.83464 -136.993,124.59629 -375.59453,60.20701 
@@ -143,7 +145,8 @@ const HeroHeader = () => {
 								cy="0"
 								r="1"
 								gradientUnits="userSpaceOnUse"
-								gradientTransform="matrix(701.51939,0,0,539.68066,1335.7969,802.04047)">
+								gradientTransform="matrix(701.51939,0,0,539.68066,
+								1335.7969,802.04047)">
 								<stop stop-color="#D77A3F" id="stop2" />
 								<stop offset="0.5" stop-color="#D40028" id="stop3" />
 								<stop offset="1" id="stop4" />
@@ -154,14 +157,15 @@ const HeroHeader = () => {
 								cy="0"
 								r="1"
 								gradientUnits="userSpaceOnUse"
-								gradientTransform="matrix(697.80588,0,0,539.67801,1165.1606,537.67973)">
+								gradientTransform="matrix(697.80588,0,0,539.67801,1165.1606,
+								537.67973)">
 								<stop stop-color="#D77A3F" id="stop5" />
 								<stop offset="0.490385" stop-color="#D40028" id="stop6" />
 								<stop offset="0.764423" stop-color="#3BC1E7" id="stop7">
 									<animate
 										attributeName="stop-color"
-										values="#D40028;#3BC1E7;#FEDE17;#5306D8;#3BC1E7;#4056BC;#3BC1E7;#5306D8;
-									#FEDE17;#3BC1E7;#D40028;"
+										values="#3BC1E7;#D40028;#FEDE17;#5306D8;#3BC1E7
+										;#4056BC;#3BC1E7;#5306D8;#FEDE17;#D40028;#3BC1E7"
 										dur="360s"
 										repeatCount="indefinite"
 									/>
