@@ -1,11 +1,12 @@
 import { useEffect, useRef, useState } from "react";
 
 const fromGradients: string[] = [
-	"from-brand-1",
 	"from-brand-2",
 	"from-brand-3",
-	"from-brand-4",
 	"from-brand-5",
+	"from-brand-4",
+	"from-brand-3",
+	"from-brand-6",
 ];
 
 const toGradients: string[] = [
@@ -18,20 +19,27 @@ const toGradients: string[] = [
 
 const HeroHeader = () => {
 	const gradientRef = useRef<null | HTMLParagraphElement>(null);
-	const [fromGradient, setFromGradient] = useState<string>(fromGradients[2]);
-	const [toGradient, setToGradient] = useState<string>(toGradients[0]);
+	const [fromGradientIndex, setFromGradientIndex] = useState<number>(0);
+	const [isReversed, setIsReversed] = useState<boolean>(false);
 
 	useEffect(() => {
+		if (fromGradientIndex === 0) {
+			setIsReversed(false);
+		}
+
+		if (fromGradientIndex === fromGradients.length - 1) {
+			setIsReversed(true);
+		}
 		const updateGradient = () => {
-			const indexFrom: number = Math.floor(
-				Math.random() * fromGradients.length,
-			);
-			const indexTo: number = Math.floor(Math.random() * toGradients.length);
-			setFromGradient(fromGradients[indexFrom]);
-			setToGradient(toGradients[indexTo]);
+			if (isReversed) {
+				setFromGradientIndex(fromGradientIndex - 1);
+			} else {
+				setFromGradientIndex(fromGradientIndex + 1);
+			}
+			console.log(fromGradientIndex);
 		};
 
-		const intervalId = setInterval(updateGradient, 15 * 1000);
+		const intervalId = setInterval(updateGradient, 30 * 1000);
 
 		gradientRef.current?.classList.remove("animate-slide-fade-in");
 		gradientRef.current?.classList.add("animate-slide-fade-in");
@@ -39,7 +47,7 @@ const HeroHeader = () => {
 		return () => {
 			clearInterval(intervalId);
 		};
-	});
+	}, [fromGradientIndex, isReversed]);
 
 	return (
 		<header
@@ -50,11 +58,12 @@ const HeroHeader = () => {
 				<p
 					ref={gradientRef}
 					className={
-						"text-h3 bg-linear-to-r bg-clip-text font-bold text-[transparent] transition-all" +
+						`text-h3 bg-linear-to-r bg-clip-text font-bold text-[transparent] 
+						transition-all` +
 						" " +
-						fromGradient +
+						fromGradients[fromGradientIndex] +
 						" " +
-						toGradient
+						toGradients[0]
 					}>
 					Fullstack Developer
 				</p>
@@ -71,14 +80,16 @@ const HeroHeader = () => {
 				<span className="text-h4">software.</span>
 			</p>
 
-			<div className="absolute top-0 left-0 max-h-[100dvh] max-w-[100dvw] overflow-hidden">
+			<div
+				className={`pointer-events-none absolute top-0 left-0 max-h-[100dvh]
+				max-w-[100dvw] overflow-hidden`}>
 				<svg
 					width="1920"
 					height="1080"
 					viewBox="0 0 1920 1080"
 					fill="none"
 					xmlns="http://www.w3.org/2000/svg">
-					<g clip-path="url(#clip0_689_81)">
+					<g clipPath="url(#clip0_689_81)">
 						<path
 							d="M1398.31 382.843C1324.79 475.171 1352.8 631.649 1265.48 
 						711.06C1121.29 842.202 870.153 774.43 705.135 878.157C600.408 
@@ -111,8 +122,8 @@ const HeroHeader = () => {
 							gradientUnits="userSpaceOnUse"
 							gradientTransform="translate(1367.73 860.744) scale(738.374 
 						568.033)">
-							<stop stop-color="#D77A3F" />
-							<stop offset="0.5" stop-color="#D40028" />
+							<stop stopColor="#D77A3F" />
+							<stop offset="0.5" stopColor="#D40028" />
 							<stop offset="1" />
 						</radialGradient>
 						<radialGradient
@@ -123,20 +134,20 @@ const HeroHeader = () => {
 							gradientUnits="userSpaceOnUse"
 							gradientTransform="translate(1191.58 568.676) 
 						scale(734.469 568.033)">
-							<stop stop-color="#D77A3F" />
-							<stop offset="0.490385" stop-color="#D40028" />
-							<stop offset="0.764423" stop-color="#3BC1E7">
+							<stop stopColor="#D77A3F" />
+							<stop offset="0.490385" stopColor="#D40028" />
+							<stop offset="0.764423" stopColor="#3BC1E7">
 								<animate
 									attributeName="stop-color"
-									values="#D40028;#3BC1E7;#FEDE17;#5306D8;#070707;#000000;#070707;#5306D8;
+									values="#D40028;#3BC1E7;#FEDE17;#5306D8;#3BC1E7;#4056BC;#3BC1E7;#5306D8;
 									#FEDE17;#3BC1E7;#D40028;"
-									dur="180s"
+									dur="360s"
 									repeatCount="indefinite"
 								/>
 								<animate
 									attributeName="offset"
 									values="0.764423;1;0.6;1.764423;"
-									dur="180s"
+									dur="360s"
 									repeatCount="indefinite"
 								/>
 							</stop>
