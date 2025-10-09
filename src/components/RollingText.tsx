@@ -17,8 +17,9 @@ const RollingText: FC<RollingTextProps> = ({ children, classes }) => {
 			const split = SplitText.create(el);
 
 			gsap.from(split.chars, {
-				rotate: -3600,
-				y: 100,
+				rotation: 360,
+				x: 96,
+				y: 32,
 				duration: 1,
 				stagger: 0.06,
 			});
