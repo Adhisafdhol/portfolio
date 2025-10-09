@@ -53,7 +53,7 @@ const HeroHeader = () => {
 		<header
 			className="bg-bg-gr-1 relative flex min-h-[100dvh] min-w-full
 		flex-col items-start justify-center gap-[64px] p-[64px]">
-			<div className="flex flex-col items-start">
+			<div className="z-10 flex flex-col items-start">
 				<h1 className="text-h1 animate-slide-in font-black">Adhis Afdhol</h1>
 				<p
 					ref={gradientRef}
@@ -68,7 +68,7 @@ const HeroHeader = () => {
 					Fullstack Developer
 				</p>
 			</div>
-			<p className="text-h5 mb-[16px] text-start">
+			<p className="text-h5 z-10 mb-[16px] text-start">
 				Exploring The Art of <span className="font-light italic">Creating</span>
 				<br />
 				<span className="text-h3 font-semibold">Innovative,</span>
@@ -81,82 +81,97 @@ const HeroHeader = () => {
 			</p>
 
 			<div
-				className={`pointer-events-none absolute top-0 left-0 max-h-[100dvh]
+				className={`pointer-events-none absolute top-0 left-0 max-h-[100dvh] 
 				max-w-[100dvw] overflow-hidden`}>
-				<svg
-					width="1920"
-					height="1080"
-					viewBox="0 0 1920 1080"
-					fill="none"
-					xmlns="http://www.w3.org/2000/svg">
-					<g clipPath="url(#clip0_689_81)">
-						<path
-							d="M1398.31 382.843C1324.79 475.171 1352.8 631.649 1265.48 
-						711.06C1121.29 842.202 870.153 774.43 705.135 878.157C600.408 
-						943.987 455.387 1152.63 455.387 1152.63C455.387 1152.63 572.992 
-						998.849 660.153 969.977C881.901 896.525 1265.48 980.866 1413.92 
-						883.379C1510.73 819.798 1481.37 628.396 1587.71 582.505C1696.02 
-						535.76 1933.06 734.093 1932.13 663.947C1930.64 550.904 1921.95 
-						16.5684 1921.95 16.5684C1921.95 16.5684 1531 216.21 1398.31 
-						382.843Z"
-							fill="url(#paint0_radial_689_81)"
-						/>
-						<path
-							d="M1400.04 366.917C1326.52 459.246 1354.53 615.723 1267.21 
-							695.134C1123.02 826.277 871.882 758.504 706.864 862.232C602.136 
-							928.061 457.115 1136.71 457.115 1136.71C457.115 1136.71 578.859 
-							992.434 661.881 954.052C852.757 865.807 1114.79 988.46 1286.77 
-							867.453C1439.44 760.039 1424.86 475.554 1546.48 371.317C1668.09 
-							267.081 1848.8 350.972 1926.05 241.876C1972.52 176.249 1923.68 
-							0.642822 1923.68 0.642822C1923.68 0.642822 1532.73 200.285 
-							1400.04 366.917Z"
-							fill="url(#paint1_radial_689_81)"
-						/>
-					</g>
-					<defs>
-						<radialGradient
-							id="paint0_radial_689_81"
-							cx="0"
-							cy="0"
-							r="1"
-							gradientUnits="userSpaceOnUse"
-							gradientTransform="translate(1367.73 860.744) scale(738.374 
-						568.033)">
-							<stop stopColor="#D77A3F" />
-							<stop offset="0.5" stopColor="#D40028" />
-							<stop offset="1" />
-						</radialGradient>
-						<radialGradient
-							id="paint1_radial_689_81"
-							cx="0"
-							cy="0"
-							r="1"
-							gradientUnits="userSpaceOnUse"
-							gradientTransform="translate(1191.58 568.676) 
-						scale(734.469 568.033)">
-							<stop stopColor="#D77A3F" />
-							<stop offset="0.490385" stopColor="#D40028" />
-							<stop offset="0.764423" stopColor="#3BC1E7">
-								<animate
-									attributeName="stop-color"
-									values="#D40028;#3BC1E7;#FEDE17;#5306D8;#3BC1E7;#4056BC;#3BC1E7;#5306D8;
+				<div className="relative top-0 h-[100dvh] w-[100vw]">
+					<svg
+						className="calc(100dvh * 1.33) absolute top-0 right-0 z-0 h-[100dvh]"
+						viewBox="0 0 1440 1080"
+						fill="none"
+						version="1.1"
+						id="svg7"
+						xmlns="http://www.w3.org/2000/svg">
+						<g
+							clip-path="url(#clip0_689_81)"
+							id="g2"
+							transform="matrix(1.0005956,0,0,1.0005956,-421.14355,-3.828639e-4)">
+							<path
+								d="m 1364.8506,347.99304 c -69.8504,87.71962 -43.2385,236.3873 
+       -126.2,311.83464 -136.993,124.59629 -375.59453,60.20701 
+       -532.37595,158.75666 -99.49974,62.54421 -238.86049,258.87936 
+       -238.86049,258.87936 0,0 113.31317,-144.21148 196.12368,-171.64239 
+       210.67985,-69.78578 575.11276,10.3455 716.14366,-82.27562 91.9779,
+       -60.40747 64.0833,-242.25598 165.1155,-285.85641 102.9039,-44.41181 
+       328.1125,144.02175 327.2289,77.37697 -1.4156,-107.40067 -9.6718,
+       -615.06586966877 -9.6718,-615.06586966877 0,0 -371.4365,189.67684966877 
+       -497.5035,347.99265966877 z"
+								fill="url(#paint0_radial_689_81)"
+								id="path1"
+							/>
+							<path
+								d="m 1363.2147,345.99211 c -69.85,87.72013 -43.2382,236.38613 
+       -126.1994,311.83311 -136.9924,124.59662 -375.59361,60.2067 
+       -532.37427,158.75682 -99.5002,62.54296 -237.28206,260.77666 
+       -237.28206,260.77666 0,0 115.6668,-137.07406 194.54452,-173.54012 
+       181.34788,-83.83999 430.30031,32.69043 593.69541,-82.27616 145.049,
+       -102.05212 131.1968,-372.33624 246.7458,-471.36995 115.5395,-99.03276 
+       287.2289,-19.32942 360.6227,-122.97958 44.1503,-62.35104 -2.2517,
+       -229.1913384 -2.2517,-229.1913384 0,0 -371.4346,189.6764684 
+       -497.501,347.9905584 z"
+								fill="url(#paint1_radial_689_81)"
+								id="path2"
+							/>
+						</g>
+						<defs id="defs7">
+							<radialGradient
+								id="paint0_radial_689_81"
+								cx="0"
+								cy="0"
+								r="1"
+								gradientUnits="userSpaceOnUse"
+								gradientTransform="matrix(701.51939,0,0,539.68066,1335.7969,802.04047)">
+								<stop stop-color="#D77A3F" id="stop2" />
+								<stop offset="0.5" stop-color="#D40028" id="stop3" />
+								<stop offset="1" id="stop4" />
+							</radialGradient>
+							<radialGradient
+								id="paint1_radial_689_81"
+								cx="0"
+								cy="0"
+								r="1"
+								gradientUnits="userSpaceOnUse"
+								gradientTransform="matrix(697.80588,0,0,539.67801,1165.1606,537.67973)">
+								<stop stop-color="#D77A3F" id="stop5" />
+								<stop offset="0.490385" stop-color="#D40028" id="stop6" />
+								<stop offset="0.764423" stop-color="#3BC1E7" id="stop7">
+									<animate
+										attributeName="stop-color"
+										values="#D40028;#3BC1E7;#FEDE17;#5306D8;#3BC1E7;#4056BC;#3BC1E7;#5306D8;
 									#FEDE17;#3BC1E7;#D40028;"
-									dur="360s"
-									repeatCount="indefinite"
+										dur="360s"
+										repeatCount="indefinite"
+									/>
+									<animate
+										attributeName="offset"
+										values="0.764423;1;0.6;1.764423;"
+										dur="360s"
+										repeatCount="indefinite"
+									/>{" "}
+								</stop>
+							</radialGradient>
+							<clipPath id="clip0_689_81">
+								<rect
+									width="1920"
+									height="1080"
+									fill="#ffffff"
+									id="rect7"
+									x="0"
+									y="0"
 								/>
-								<animate
-									attributeName="offset"
-									values="0.764423;1;0.6;1.764423;"
-									dur="360s"
-									repeatCount="indefinite"
-								/>
-							</stop>
-						</radialGradient>
-						<clipPath id="clip0_689_81">
-							<rect width="1920" height="1080" fill="white" />
-						</clipPath>
-					</defs>
-				</svg>
+							</clipPath>
+						</defs>
+					</svg>
+				</div>
 			</div>
 		</header>
 	);
