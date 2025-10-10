@@ -1,5 +1,25 @@
 #root {
 	max-width: 1920px;
+	max-height: 100dvh;
 	margin: 0 auto;
 	text-align: center;
+	overflow: scroll;
+}
+
+#root::-webkit-scrollbar {
+	width: 0.3vw;
+	height: 0.3vh;
+}
+
+#root::-webkit-sccrollbar-track {
+	background-color: var(--color-bg-2);
+}
+
+#root::-webkit-scrollbar-thumb {
+	background: var(--color-brand-1);
+	border-radius: 8px;
+}
+
+#root::-webkit-scrollbar-thumb:hover {
+	background: var(--color-brand-3);
 }
