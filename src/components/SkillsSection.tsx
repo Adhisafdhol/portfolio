@@ -4,6 +4,7 @@ import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { Observer } from "gsap/Observer";
 import { SplitText } from "gsap/SplitText";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { TechStackContext } from "../contexts/techStack";
 
 const SkillsSection = () => {
@@ -12,7 +13,7 @@ const SkillsSection = () => {
 	const techStackListRef = useRef<null | HTMLUListElement>(null);
 
 	useEffect(() => {
-		gsap.registerPlugin(Observer);
+		gsap.registerPlugin(Observer, ScrollTrigger);
 		const sectionEl: null | HTMLElement = sectionRef.current;
 		const headingEl: null | HTMLHeadingElement = headingRef.current;
 		const techStackListEl: null | HTMLUListElement = techStackListRef.current;
@@ -31,7 +32,6 @@ const SkillsSection = () => {
 
 			const goToSection: GoToSection = () => {
 				const timeline = gsap.timeline({
-					defaults: { during: 1.25, ease: "power1.inOut" },
 					onStart: () => {
 						hasRun = true;
 					},
@@ -88,6 +88,8 @@ const SkillsSection = () => {
 				tolerance: 10,
 			});
 		}
+
+		return () => {};
 	}, []);
 
 	return (
