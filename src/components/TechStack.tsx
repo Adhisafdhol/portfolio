@@ -11,9 +11,10 @@ const TechStack: FC<TechStackProps> = ({ techStack }) => {
 
 	return (
 		<ul ref={techStackListRef} className="flex flex-wrap gap-[32px]">
-			{techStack.map((tech: Tech) => {
+			{techStack.map((tech: Tech, index: number) => {
 				return (
 					<li
+						key={index}
 						className={`bg-bg-1 flex items-center gap-[16px] rounded-[8px] 
 							px-[32px] py-[16px]`}>
 						<img width="48px" height="48px" src={tech.icon} />
