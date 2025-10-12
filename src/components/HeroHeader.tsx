@@ -106,7 +106,7 @@ const HeroHeader = () => {
 							id="svg7"
 							xmlns="http://www.w3.org/2000/svg">
 							<g
-								clip-path="url(#clip0_689_81)"
+								clipPath="url(#clip0_689_81)"
 								id="g2"
 								transform="matrix(1.0005956,0,0,1.0005956,-421.14355,
 							-3.828639e-4)">
@@ -146,8 +146,8 @@ const HeroHeader = () => {
 									gradientUnits="userSpaceOnUse"
 									gradientTransform="matrix(701.51939,0,0,539.68066,
 								1335.7969,802.04047)">
-									<stop stop-color="#D77A3F" id="stop2" />
-									<stop offset="0.5" stop-color="#D40028" id="stop3" />
+									<stop stopColor="#D77A3F" id="stop2" />
+									<stop offset="0.5" stopColor="#D40028" id="stop3" />
 									<stop offset="1" id="stop4" />
 								</radialGradient>
 								<radialGradient
@@ -158,9 +158,9 @@ const HeroHeader = () => {
 									gradientUnits="userSpaceOnUse"
 									gradientTransform="matrix(697.80588,0,0,539.67801,1165.1606,
 								537.67973)">
-									<stop stop-color="#D77A3F" id="stop5" />
-									<stop offset="0.490385" stop-color="#D40028" id="stop6" />
-									<stop offset="0.764423" stop-color="#3BC1E7" id="stop7">
+									<stop stopColor="#D77A3F" id="stop5" />
+									<stop offset="0.490385" stopColor="#D40028" id="stop6" />
+									<stop offset="0.764423" stopColor="#3BC1E7" id="stop7">
 										<animate
 											attributeName="stop-color"
 											values="#3BC1E7;#D40028;#FEDE17;#5306D8;#3BC1E7
