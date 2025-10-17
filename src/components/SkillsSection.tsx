@@ -18,76 +18,78 @@ const SkillsSection = () => {
 		const headingEl: null | HTMLHeadingElement = headingRef.current;
 		const techStackListEl: null | HTMLUListElement = techStackListRef.current;
 
-		if (headingEl && techStackListEl && sectionEl) {
-			const splitHeading: SplitText = new SplitText(headingEl, {
-				type: "chars, words, lines",
-				linesClassName: "clip-text",
-			});
-
-			let hasRun: boolean = false;
-
-			interface GoToSection {
-				(): void;
-			}
-
-			const goToSection: GoToSection = () => {
-				const timeline = gsap.timeline({
-					onStart: () => {
-						hasRun = true;
-					},
+		document.fonts.ready.then(() => {
+			if (headingEl && techStackListEl && sectionEl) {
+				const splitHeading: SplitText = new SplitText(headingEl, {
+					type: "chars, words, lines",
+					linesClassName: "clip-text",
 				});
 
-				timeline
-					.fromTo(
-						sectionEl,
-						{
-							autoAlpha: 0,
-							yPercent: 150,
-						},
-						{
-							autoAlpha: 1,
-							yPercent: 0,
-							duration: 0.6,
-							ease: "power2",
-						},
-					)
-					.fromTo(
-						splitHeading.chars,
-						{
-							yPercent: 30,
-							autoAlpha: 0.6,
-						},
-						{
-							yPercent: 0,
-							autoAlpha: 1,
-							duration: 0.8,
-							ease: "power2",
-						},
-						0.3,
-					)
-					.fromTo(
-						techStackListEl,
-						{
-							autoAlpha: 0.6,
-							yPercent: 30,
-						},
-						{
-							autoAlpha: 1,
-							yPercent: 0,
-							duration: 0.8,
-							ease: "power2",
-						},
-						0.3,
-					);
-			};
+				let hasRun: boolean = false;
 
-			Observer.create({
-				type: "wheel, touch, pointer",
-				wheelSpeed: -0.5,
-				onUp: () => !hasRun && goToSection(),
-				tolerance: 10,
-			});
-		}
+				interface GoToSection {
+					(): void;
+				}
+
+				const goToSection: GoToSection = () => {
+					const timeline = gsap.timeline({
+						onStart: () => {
+							hasRun = true;
+						},
+					});
+
+					timeline
+						.fromTo(
+							sectionEl,
+							{
+								autoAlpha: 0,
+								yPercent: 150,
+							},
+							{
+								autoAlpha: 1,
+								yPercent: 0,
+								duration: 0.6,
+								ease: "power2",
+							},
+						)
+						.fromTo(
+							splitHeading.chars,
+							{
+								yPercent: 30,
+								autoAlpha: 0.6,
+							},
+							{
+								yPercent: 0,
+								autoAlpha: 1,
+								duration: 0.8,
+								ease: "power2",
+							},
+							0.3,
+						)
+						.fromTo(
+							techStackListEl,
+							{
+								autoAlpha: 0.6,
+								yPercent: 30,
+							},
+							{
+								autoAlpha: 1,
+								yPercent: 0,
+								duration: 0.8,
+								ease: "power2",
+							},
+							0.3,
+						);
+				};
+
+				Observer.create({
+					type: "wheel, touch, pointer",
+					wheelSpeed: -0.5,
+					onUp: () => !hasRun && goToSection(),
+					tolerance: 10,
+				});
+			}
+		});
 
 		return () => {};
 	}, []);

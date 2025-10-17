@@ -12,16 +12,18 @@ const HeroHeading: FC<HeroHeadingProps> = ({ children }) => {
 	useEffect(() => {
 		const el = refEl.current;
 
-		if (el) {
-			const split = SplitText.create(el);
+		document.fonts.ready.then(() => {
+			if (el) {
+				const split = SplitText.create(el);
 
-			gsap.from(split.chars, {
-				x: -100,
-				y: 8,
-				duration: 1,
-				stagger: 0.06,
-			});
-		}
+				gsap.from(split.chars, {
+					x: -100,
+					y: 8,
+					duration: 1,
+					stagger: 0.06,
+				});
+			}
+		});
 	}, []);
 
 	return (

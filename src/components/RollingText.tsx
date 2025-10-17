@@ -13,17 +13,19 @@ const RollingText: FC<RollingTextProps> = ({ children, classes }) => {
 	useEffect(() => {
 		const el = refEl.current;
 
-		if (el) {
-			const split = SplitText.create(el);
+		document.fonts.ready.then(() => {
+			if (el) {
+				const split = SplitText.create(el);
 
-			gsap.from(split.chars, {
-				rotation: 360,
-				x: 96,
-				y: 32,
-				duration: 1,
-				stagger: 0.06,
-			});
-		}
+				gsap.from(split.chars, {
+					rotation: 360,
+					x: 96,
+					y: 32,
+					duration: 1,
+					stagger: 0.06,
+				});
+			}
+		});
 	}, []);
 
 	return (
