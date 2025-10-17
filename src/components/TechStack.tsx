@@ -17,7 +17,7 @@ const TechStack: FC<TechStackProps> = ({ techStack }) => {
 						key={index}
 						className={`bg-bg-1 flex items-center gap-[16px] rounded-[8px] 
 							px-[32px] py-[16px]`}>
-						<img width="48px" height="48px" src={tech.icon} />
+						<img width="48px" height="48px" src={tech.icon.default} />
 						{tech.text}
 					</li>
 				);

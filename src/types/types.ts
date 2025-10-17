@@ -1,5 +1,9 @@
 interface Tech {
-	icon: string;
+	icon: {
+		default: string;
+		light?: string;
+		dark?: string;
+	};
 	text: string;
 }
 

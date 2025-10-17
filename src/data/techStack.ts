@@ -18,25 +18,60 @@ import bashIcon from "../assets/images/bash-icon.svg";
 import tanstackQueryIcon from "../assets/images/tanstack-query-icon.png";
 import gsapIcon from "../assets/images/gsap-icon.svg";
 
-const techStack: Tech[] = [
-	{ text: "HTML", icon: htmlIcon },
-	{ text: "CSS", icon: cssIcon },
-	{ text: "Javascript", icon: javascriptIcon },
-	{ text: "Typescript", icon: typescriptIcon },
-	{ text: "Bash", icon: bashIcon },
-	{ text: "Socket.IO", icon: socketioIcon },
-	{ text: "NodeJS", icon: nodejsIcon },
-	{ text: "Express", icon: expressIcon },
-	{ text: "Postgresql", icon: postgresqlIcon },
-	{ text: "Prisma", icon: prismaIcon },
-	{ text: "react", icon: reactIcon },
-	{ text: "NextJs", icon: nextjsIcon },
-	{ text: "Tanstack Query", icon: tanstackQueryIcon },
-	{ text: "GSAP", icon: gsapIcon },
-	{ text: "Jest", icon: jestIcon },
-	{ text: "git", icon: gitIcon },
-	{ text: "Figma", icon: figmaIcon },
-	{ text: "Inkscape", icon: inkscapeIcon },
-];
+interface Techs {
+	html: Tech;
+	css: Tech;
+	javascript: Tech;
+	typescript: Tech;
+	bash: Tech;
+	socketIO: Tech;
+	nodeJS: Tech;
+	express: Tech;
+	postgreSQL: Tech;
+	prisma: Tech;
+	react: Tech;
+	nextJS: Tech;
+	tanstackQuery: Tech;
+	gsap: Tech;
+	jest: Tech;
+	git: Tech;
+	figma: Tech;
+	Inkscape: Tech;
+}
+
+const techs: Techs = {
+	html: {
+		text: "HTML",
+		icon: {
+			default: htmlIcon,
+		},
+	},
+	css: { text: "CSS", icon: { default: cssIcon } },
+	javascript: { text: "Javascript", icon: { default: javascriptIcon } },
+	typescript: { text: "Typescript", icon: { default: typescriptIcon } },
+	bash: { text: "Bash", icon: { default: bashIcon } },
+	socketIO: { text: "Socket.IO", icon: { default: socketioIcon } },
+	nodeJS: { text: "NodeJS", icon: { default: nodejsIcon } },
+	express: { text: "Express", icon: { default: expressIcon } },
+	postgreSQL: { text: "Postgresql", icon: { default: postgresqlIcon } },
+	prisma: { text: "Prisma", icon: { default: prismaIcon } },
+	react: { text: "react", icon: { default: reactIcon } },
+	nextJS: { text: "NextJs", icon: { default: nextjsIcon } },
+	tanstackQuery: {
+		text: "Tanstack Query",
+		icon: { default: tanstackQueryIcon },
+	},
+	gsap: { text: "GSAP", icon: { default: gsapIcon } },
+	jest: { text: "Jest", icon: { default: jestIcon } },
+	git: { text: "git", icon: { default: gitIcon } },
+	figma: { text: "Figma", icon: { default: figmaIcon } },
+	Inkscape: { text: "Inkscape", icon: { default: inkscapeIcon } },
+};
+
+const techStack: Tech[] = [];
+
+for (const key in techs) {
+	techStack.push(techs[key as keyof Techs]);
+}
 
 export default techStack;
