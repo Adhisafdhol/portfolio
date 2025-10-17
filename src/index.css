@@ -65,6 +65,9 @@
 	--text-h1: calc(var(--text-h2) * var(--typescale));
 	--animate-slide-fade-in: slide-fade-in 500ms ease-in-out;
 	--animate-slide-in: slide-in 500ms ease-in;
+	--animate-expand: expand 300ms ease-in;
+	--animate-pinch: pinch 300ms ease-in;
+
 	@keyframes slide-fade-in {
 		0% {
 			opacity: 0.5;
@@ -93,6 +96,28 @@
 
 		to {
 			translate: 0 0;
+		}
+	}
+
+	@keyframes expand {
+		from {
+			scale: 50% 100%;
+		}
+
+		to {
+			scale: 100% 100%;
+		}
+	}
+
+	@keyframes pinch {
+		0% {
+			scale: 200% 100%;
+			border-radius: 4px;
+		}
+
+		100% {
+			scale: 100% 100%;
+			border-radius: 50%;
 		}
 	}
 }
