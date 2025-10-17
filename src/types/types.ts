@@ -3,7 +3,7 @@ interface Tech {
 	text: string;
 }
 
-interface ProjectImage {
+interface ProjectPreview {
 	url: string;
 	description: string;
 	alt: string;
@@ -16,7 +16,7 @@ interface Project {
 		styles: string;
 	};
 	about: string;
-	images: ProjectImage[];
+	previews: ProjectPreview[];
 }
 
-export type { Tech, ProjectImage, Project };
+export type { Tech, ProjectPreview, Project };
