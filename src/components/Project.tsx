@@ -11,8 +11,8 @@ const Project: FC<ProjectProps> = ({ project }) => {
 		<article className="flex flex-col items-start gap-[32px]">
 			<h3
 				className={
-					"text-h4 bg-linear-to-r bg-clip-text font-extrabold text-[transparent]" +
-					` ${project.title.styles}`
+					`text-h4 bg-linear-to-r bg-clip-text font-extrabold
+					text-[transparent]` + ` ${project.title.styles}`
 				}>
 				{project.title.content}
 			</h3>
