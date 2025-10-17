@@ -36,7 +36,7 @@ interface Techs {
 	jest: Tech;
 	git: Tech;
 	figma: Tech;
-	Inkscape: Tech;
+	inkscape: Tech;
 }
 
 const techs: Techs = {
@@ -65,7 +65,7 @@ const techs: Techs = {
 	jest: { text: "Jest", icon: { default: jestIcon } },
 	git: { text: "git", icon: { default: gitIcon } },
 	figma: { text: "Figma", icon: { default: figmaIcon } },
-	Inkscape: { text: "Inkscape", icon: { default: inkscapeIcon } },
+	inkscape: { text: "Inkscape", icon: { default: inkscapeIcon } },
 };
 
 const techStack: Tech[] = [];
@@ -75,3 +75,4 @@ for (const key in techs) {
 }
 
 export default techStack;
+export { techs };
