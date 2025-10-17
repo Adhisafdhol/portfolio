@@ -97,10 +97,24 @@
 	}
 }
 
-base {
+@layer base {
 	@font-face {
 		font-family: "inter";
 		src: url("/fonts/inter/inter-v.woff2") format("woff2");
+	}
+
+	.icon {
+		@apply bg-center bg-no-repeat transition-all
+		before:h-full before:w-full before:bg-size-[50%] 
+		before:bg-center before:bg-no-repeat hover:before:scale-105;
+	}
+
+	.play-icon {
+		@apply before:bg-[url(./assets/images/play-icon.svg)] before:content-[""];
+	}
+
+	.pause-icon {
+		@apply before:bg-[url(./assets/images/pause-icon.svg)] before:content-[""];
 	}
 }
 
