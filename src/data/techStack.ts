@@ -17,6 +17,7 @@ import inkscapeIcon from "../assets/images/inkscape-icon.svg";
 import bashIcon from "../assets/images/bash-icon.svg";
 import tanstackQueryIcon from "../assets/images/tanstack-query-icon.png";
 import gsapIcon from "../assets/images/gsap-icon.svg";
+import tailwindCSSIcon from "../assets/images/tailwindcss-icon.svg";
 
 interface Techs {
 	html: Tech;
@@ -32,6 +33,7 @@ interface Techs {
 	react: Tech;
 	nextJS: Tech;
 	tanstackQuery: Tech;
+	tailwindCSS: Tech;
 	gsap: Tech;
 	jest: Tech;
 	git: Tech;
@@ -61,6 +63,7 @@ const techs: Techs = {
 		text: "Tanstack Query",
 		icon: { default: tanstackQueryIcon },
 	},
+	tailwindCSS: { text: "TailwindCSS", icon: { default: tailwindCSSIcon } },
 	gsap: { text: "GSAP", icon: { default: gsapIcon } },
 	jest: { text: "Jest", icon: { default: jestIcon } },
 	git: { text: "git", icon: { default: gitIcon } },
