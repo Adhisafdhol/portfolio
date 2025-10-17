@@ -1,0 +1,69 @@
+import { useState, type FC } from "react";
+import type { ProjectPreview } from "../types/types";
+import Video from "./Video";
+
+interface ProjectPreviewProps {
+	previews: ProjectPreview[];
+	styles: string;
+}
+
+const ProjectPreviewBox: FC<ProjectPreviewProps> = ({ previews, styles }) => {
+	const [activeIndex, setActiveIndex] = useState<number>(0);
+
+	return (
+		<section className="flex flex-col items-center gap-[32px]">
+			<div className="flex flex-col gap-[32px] rounded-[8px] rounded-b-[32px]">
+				<ul className="h-[608px] w-[1080px] overflow-hidden">
+					{previews.map((preview: ProjectPreview, index: number) => {
+						return (
+							<li
+								key={index}
+								className={
+									"h-full w-full rounded-[8px]" +
+									(activeIndex === index ? " z-10" : " z-[-1] hidden")
+								}>
+								{preview.type.split("/")[0] === "image" ? (
+									<img
+										className="rounded-[inherit]"
+										src={preview.url}
+										alt={preview.alt}
+									/>
+								) : (
+									<Video src={preview.url} type={preview.type} />
+								)}
+							</li>
+						);
+					})}
+				</ul>
+				<div className="flex justify-center">
+					<p
+						className={`text-p flex-none bg-linear-to-r bg-clip-text font-bold
+						text-[transparent] ${styles}`}>
+						{previews[activeIndex].description}
+					</p>
+				</div>
+			</div>
+			<nav className="flex gap-[16px]">
+				{previews.map((_preview: ProjectPreview, index: number) => {
+					return (
+						<button
+							key={index}
+							className={
+								`hover:border-brand-3 min-h-[24px] min-w-[24px] rounded-full 
+								border-[1px] border-[transparent] backdrop-blur-md  
+								hover:bg-[rgba(59,193,231,0.6)]` +
+								(activeIndex === index
+									? " bg-gr-brand-main animate-expand w-[48px]"
+									: " bg-bg-3 animate-pinch")
+							}
+							onClick={() => {
+								setActiveIndex(index);
+							}}></button>
+					);
+				})}
+			</nav>
+		</section>
+	);
+};
+
+export default ProjectPreviewBox;
