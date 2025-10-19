@@ -10,6 +10,7 @@ import octoconvoCreateCommunityModal from "../assets/images/create-community-oct
 import octoconvoDMPage from "../assets/images/dm-octoconvo.png";
 import octoconvo404Page from "../assets/images/404-octoconvo.png";
 import octoconvoDemo from "../assets/videos/octoconvo-demo.mp4";
+import { techs } from "./techStack";
 
 const projects: Project[] = [
 	{
@@ -85,6 +86,20 @@ const projects: Project[] = [
 				alt: "",
 				type: "video/mp4",
 			},
+		],
+		techStack: [
+			techs.typescript,
+			techs.nodeJS,
+			techs.express,
+			techs.postgreSQL,
+			techs.tailwindCSS,
+			techs.nextJS,
+			techs.react,
+			techs.tanstackQuery,
+			techs.tailwindCSS,
+			techs.jest,
+			techs.inkscape,
+			techs.figma,
 		],
 	},
 ];

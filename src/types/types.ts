@@ -21,6 +21,7 @@ interface Project {
 	};
 	about: string;
 	previews: ProjectPreview[];
+	techStack: Tech[];
 }
 
 export type { Tech, ProjectPreview, Project };
