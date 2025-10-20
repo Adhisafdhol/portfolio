@@ -45,30 +45,49 @@ const techs: Techs = {
 	html: {
 		text: "HTML",
 		icon: {
-			default: htmlIcon,
+			dark: htmlIcon,
+			light: htmlIcon,
 		},
 	},
-	css: { text: "CSS", icon: { default: cssIcon } },
-	javascript: { text: "Javascript", icon: { default: javascriptIcon } },
-	typescript: { text: "Typescript", icon: { default: typescriptIcon } },
-	bash: { text: "Bash", icon: { default: bashIcon } },
-	socketIO: { text: "Socket.IO", icon: { default: socketioIcon } },
-	nodeJS: { text: "NodeJS", icon: { default: nodejsIcon } },
-	express: { text: "Express", icon: { default: expressIcon } },
-	postgreSQL: { text: "Postgresql", icon: { default: postgresqlIcon } },
-	prisma: { text: "Prisma", icon: { default: prismaIcon } },
-	react: { text: "react", icon: { default: reactIcon } },
-	nextJS: { text: "NextJs", icon: { default: nextjsIcon } },
+	css: { text: "CSS", icon: { dark: cssIcon, light: cssIcon } },
+	javascript: {
+		text: "Javascript",
+		icon: { dark: javascriptIcon, light: javascriptIcon },
+	},
+	typescript: {
+		text: "Typescript",
+		icon: { dark: typescriptIcon, light: typescriptIcon },
+	},
+	bash: { text: "Bash", icon: { dark: bashIcon, light: bashIcon } },
+	socketIO: {
+		text: "Socket.IO",
+		icon: { dark: socketioIcon, light: socketioIcon },
+	},
+	nodeJS: { text: "NodeJS", icon: { dark: nodejsIcon, light: nodejsIcon } },
+	express: { text: "Express", icon: { dark: expressIcon, light: expressIcon } },
+	postgreSQL: {
+		text: "Postgresql",
+		icon: { dark: postgresqlIcon, light: postgresqlIcon },
+	},
+	prisma: { text: "Prisma", icon: { dark: prismaIcon, light: prismaIcon } },
+	react: { text: "react", icon: { dark: reactIcon, light: reactIcon } },
+	nextJS: { text: "NextJs", icon: { dark: nextjsIcon, light: nextjsIcon } },
 	tanstackQuery: {
 		text: "Tanstack Query",
-		icon: { default: tanstackQueryIcon },
+		icon: { dark: tanstackQueryIcon, light: tanstackQueryIcon },
 	},
-	tailwindCSS: { text: "TailwindCSS", icon: { default: tailwindCSSIcon } },
-	gsap: { text: "GSAP", icon: { default: gsapIcon } },
-	jest: { text: "Jest", icon: { default: jestIcon } },
-	git: { text: "git", icon: { default: gitIcon } },
-	figma: { text: "Figma", icon: { default: figmaIcon } },
-	inkscape: { text: "Inkscape", icon: { default: inkscapeIcon } },
+	tailwindCSS: {
+		text: "TailwindCSS",
+		icon: { dark: tailwindCSSIcon, light: tailwindCSSIcon },
+	},
+	gsap: { text: "GSAP", icon: { dark: gsapIcon, light: gsapIcon } },
+	jest: { text: "Jest", icon: { dark: jestIcon, light: jestIcon } },
+	git: { text: "git", icon: { dark: gitIcon, light: gitIcon } },
+	figma: { text: "Figma", icon: { dark: figmaIcon, light: figmaIcon } },
+	inkscape: {
+		text: "Inkscape",
+		icon: { dark: inkscapeIcon, light: inkscapeIcon },
+	},
 };
 
 const techStack: Tech[] = [];
