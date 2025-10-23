@@ -30,6 +30,11 @@
 		var(--color-icy-white),
 		var(--color-icy-blue)
 	);
+	--background-image-gr-icy-r: linear-gradient(
+		to right,
+		var(--color-icy-white),
+		var(--color-icy-blue)
+	);
 	--background-image-bg-gr-1: linear-gradient(
 		to bottom,
 		var(--color-bg-1),
