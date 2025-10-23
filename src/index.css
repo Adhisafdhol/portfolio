@@ -152,6 +152,21 @@
 	.pause-icon {
 		@apply before:bg-[url(./assets/images/pause-icon.svg)] before:content-[""];
 	}
+
+	.back-arrow-icon {
+		@apply before:bg-[url(./assets/images/arrow-icon.svg)] before:content-[""];
+	}
+
+	.forward-arrow-icon {
+		@apply rotate-180 before:bg-[url(./assets/images/arrow-icon.svg)]
+		before:content-[""];
+	}
+
+	.scrollbar-hidden::-webkit-scrollbar {
+		width: 0px;
+		height: 0px;
+		background: transparent;
+	}
 }
 
 body {
