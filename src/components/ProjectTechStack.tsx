@@ -1,0 +1,88 @@
+import { useRef, useState, type FC } from "react";
+import { type Tech } from "../types/types";
+
+interface ProjectTechStackProps {
+	techStack: Tech[];
+}
+
+const ProjectTechStack: FC<ProjectTechStackProps> = ({ techStack }) => {
+	const [startIndex, setStartIndex] = useState<number>(0);
+	const carouselRef = useRef<null | HTMLUListElement>(null);
+	const lastItemRef = useRef<null | HTMLLIElement>(null);
+
+	return (
+		<div
+			className={`bg-gr-icy text-h6 relative flex max-w-[72ch] items-center 
+				gap-[32px] overflow-hidden scroll-smooth rounded-[16px] px-[32px]`}>
+			<button
+				onClick={() => {
+					if (startIndex > 0) {
+						setStartIndex(startIndex - 1);
+						carouselRef.current?.children[startIndex - 1].scrollIntoView({
+							behavior: "smooth",
+							block: "nearest",
+							inline: "start",
+						});
+					}
+				}}
+				aria-label="Slide back"
+				className={`icon back-arrow-icon flex h-[48px] w-[48px]
+          items-center rounded-full hover:scale-125`}
+			/>
+			<ul
+				ref={carouselRef}
+				className={`text-h6 scrollbar-hidden box-border flex max-w-[72ch] snap-x
+				gap-[32px] overflow-x-scroll overflow-y-visible scroll-smooth
+				rounded-[16px] py-[32px]`}>
+				{techStack.map((tech: Tech, index: number) => {
+					return (
+						<li
+							key={tech.text}
+							ref={index === techStack.length - 1 ? lastItemRef : null}
+							id={`project-tech-stack-carousel-${index}`}
+							className={`bg-gr-icy-r rounded-full p-[24px] 
+									shadow-[0_4px_4px_rgba(36,41,58,0.25)]`}>
+							<img
+								src={tech.icon.light}
+								alt={tech.text + " icon"}
+								className="h-[32px] min-h-[32px] w-[32px] min-w-[32px]"
+							/>
+						</li>
+					);
+				})}
+			</ul>
+			<button
+				onClick={() => {
+					const carouselEl: null | HTMLUListElement = carouselRef.current;
+					const lastItemEl: null | HTMLLIElement = lastItemRef.current;
+
+					if (
+						lastItemEl &&
+						carouselEl &&
+						carouselEl.scrollLeft +
+							carouselEl?.clientWidth +
+							lastItemEl.getBoundingClientRect().width <
+							carouselEl?.scrollWidth
+					) {
+						setStartIndex(startIndex + 1);
+						carouselRef.current?.children[startIndex + 1].scrollIntoView({
+							behavior: "smooth",
+							block: "nearest",
+							inline: "start",
+						});
+					} else
+						carouselRef.current?.children[techStack.length - 1].scrollIntoView({
+							behavior: "smooth",
+							block: "nearest",
+							inline: "end",
+						});
+				}}
+				aria-label="Slide forward"
+				className={`icon forward-arrow-icon flex h-[48px] w-[48px]
+          items-center rounded-full hover:scale-125`}
+			/>
+		</div>
+	);
+};
+
+export default ProjectTechStack;

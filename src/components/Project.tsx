@@ -1,6 +1,7 @@
 import type { FC } from "react";
 import type { Project as ProjectI } from "../types/types";
 import ProjectPreviewBox from "./ProjectPreviewBox";
+import ProjectTechStack from "./ProjectTechStack";
 
 interface ProjectProps {
 	project: ProjectI;
@@ -20,6 +21,7 @@ const Project: FC<ProjectProps> = ({ project }) => {
 				{project.about}
 			</p>
 			<ProjectPreviewBox previews={project.previews} />
+			<ProjectTechStack techStack={project.techStack} />
 		</article>
 	);
 };
