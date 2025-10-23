@@ -6,9 +6,11 @@ import typescriptIcon from "../assets/images/typescript-icon.svg";
 import socketioIcon from "../assets/images/socketio-icon.svg";
 import nodejsIcon from "../assets/images/nodejs-icon.svg";
 import expressIcon from "../assets/images/express-icon.svg";
+import expressIconLight from "../assets/images/express-icon-light.svg";
 import postgresqlIcon from "../assets/images/postgresql-icon.svg";
 import reactIcon from "../assets/images/react-icon.svg";
 import prismaIcon from "../assets/images/prisma-icon.svg";
+import prismaIconLight from "../assets/images/prisma-icon-light.svg";
 import nextjsIcon from "../assets/images/nextjs-icon.svg";
 import jestIcon from "../assets/images/jest-icon.svg";
 import gitIcon from "../assets/images/git-icon.svg";
@@ -64,12 +66,18 @@ const techs: Techs = {
 		icon: { dark: socketioIcon, light: socketioIcon },
 	},
 	nodeJS: { text: "NodeJS", icon: { dark: nodejsIcon, light: nodejsIcon } },
-	express: { text: "Express", icon: { dark: expressIcon, light: expressIcon } },
+	express: {
+		text: "Express",
+		icon: { dark: expressIcon, light: expressIconLight },
+	},
 	postgreSQL: {
 		text: "Postgresql",
 		icon: { dark: postgresqlIcon, light: postgresqlIcon },
 	},
-	prisma: { text: "Prisma", icon: { dark: prismaIcon, light: prismaIcon } },
+	prisma: {
+		text: "Prisma",
+		icon: { dark: prismaIcon, light: prismaIconLight },
+	},
 	react: { text: "react", icon: { dark: reactIcon, light: reactIcon } },
 	nextJS: { text: "NextJs", icon: { dark: nextjsIcon, light: nextjsIcon } },
 	tanstackQuery: {
