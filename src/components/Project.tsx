@@ -19,10 +19,7 @@ const Project: FC<ProjectProps> = ({ project }) => {
 			<p className="text-h6 text-fg-2 max-w-[72ch] text-start font-bold">
 				{project.about}
 			</p>
-			<ProjectPreviewBox
-				previews={project.previews}
-				styles={project.title.styles}
-			/>
+			<ProjectPreviewBox previews={project.previews} />
 		</article>
 	);
 };

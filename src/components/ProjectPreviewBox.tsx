@@ -4,10 +4,9 @@ import Video from "./Video";
 
 interface ProjectPreviewProps {
 	previews: ProjectPreview[];
-	styles: string;
 }
 
-const ProjectPreviewBox: FC<ProjectPreviewProps> = ({ previews, styles }) => {
+const ProjectPreviewBox: FC<ProjectPreviewProps> = ({ previews }) => {
 	const [activeIndex, setActiveIndex] = useState<number>(0);
 
 	return (
@@ -37,8 +36,8 @@ const ProjectPreviewBox: FC<ProjectPreviewProps> = ({ previews, styles }) => {
 				</ul>
 				<div className="flex justify-center">
 					<p
-						className={`text-p flex-none bg-linear-to-r bg-clip-text font-bold
-						text-[transparent] ${styles}`}>
+						className={`text-p bg-gr-icy flex-none bg-linear-to-r bg-clip-text
+						font-bold text-[transparent]`}>
 						{previews[activeIndex].description}
 					</p>
 				</div>
