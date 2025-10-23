@@ -38,7 +38,7 @@ const ProjectPreviewBox: FC<ProjectPreviewProps> = ({ previews }) => {
 					<p
 						className={`text-p bg-gr-icy flex-none bg-linear-to-r bg-clip-text
 						font-bold text-[transparent]`}>
-						{previews[activeIndex].description}
+						{previews[activeIndex]?.description}
 					</p>
 				</div>
 			</div>
