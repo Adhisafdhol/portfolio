@@ -9,7 +9,7 @@ import expressIcon from "../assets/images/express-icon.svg";
 import postgresqlIcon from "../assets/images/postgresql-icon.svg";
 import reactIcon from "../assets/images/react-icon.svg";
 import prismaIcon from "../assets/images/prisma-icon.svg";
-import nextjsIcon from "../assets/images/nodejs-icon.svg";
+import nextjsIcon from "../assets/images/nextjs-icon.svg";
 import jestIcon from "../assets/images/jest-icon.svg";
 import gitIcon from "../assets/images/git-icon.svg";
 import figmaIcon from "../assets/images/figma-icon.svg";
