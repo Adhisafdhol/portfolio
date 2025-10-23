@@ -49,11 +49,11 @@ const ProjectPreviewBox: FC<ProjectPreviewProps> = ({ previews, styles }) => {
 						<button
 							key={index}
 							className={
-								`hover:border-brand-3 min-h-[24px] min-w-[24px] rounded-full 
+								`hover:border-brand-3 min-h-[16px] min-w-[16px] rounded-full 
 								border-[1px] border-[transparent] backdrop-blur-md  
 								hover:bg-[rgba(59,193,231,0.6)]` +
 								(activeIndex === index
-									? " bg-gr-brand-main animate-expand w-[48px]"
+									? " bg-gr-icy animate-expand w-[48px]"
 									: " bg-bg-3 animate-pinch")
 							}
 							onClick={() => {
