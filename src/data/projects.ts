@@ -10,15 +10,16 @@ import octoconvoCreateCommunityModal from "../assets/images/create-community-oct
 import octoconvoDMPage from "../assets/images/dm-octoconvo.png";
 import octoconvo404Page from "../assets/images/404-octoconvo.png";
 import octoconvoDemo from "../assets/videos/octoconvo-demo.mp4";
+import battleshipLobby from "../assets/images/lobby-battleship.png";
+import battleshipGameboard from "../assets/images/gameboard-battleship.png";
 import { techs } from "./techStack";
 
 const projects: Project[] = [
 	{
 		title: { content: "Octoconvo", styles: "from-fg-1 to-brand-4" },
-		about: `A real-time chatting application with a community and friend system.
-		You can send messages and images, customise your profile, explore, join, and
-		create communities, explore people and add friends and receive notifications
-		in real-time.`,
+		about: `Octoconvo is a real-time chatting application designed for creating
+		a community driven platform. You can send messages and images, customise
+		your profile, explore and create communitie and more`,
 		previews: [
 			{
 				url: octoconvoHomepage,
@@ -92,7 +93,7 @@ const projects: Project[] = [
 			techs.nodeJS,
 			techs.express,
 			techs.postgreSQL,
-			techs.tailwindCSS,
+			techs.prisma,
 			techs.nextJS,
 			techs.react,
 			techs.tanstackQuery,
@@ -101,6 +102,32 @@ const projects: Project[] = [
 			techs.inkscape,
 			techs.figma,
 		],
+		links: [
+			{ text: "Codebase", url: "https://github.com/Octoconvo/octoconvo" },
+		],
+	},
+	{
+		title: {
+			content: "Battleship",
+			styles: "from-fg-1 to-brand-1",
+		},
+		about: `A web game based on a classic strategy guessing game Battleship.`,
+		previews: [
+			{
+				url: battleshipLobby,
+				description: "Battleship lobby",
+				alt: "Battleship lobby screenshot",
+				type: "image/png",
+			},
+			{
+				url: battleshipGameboard,
+				description: "Battleship gameboard",
+				alt: "Battleship gameboard screenshot",
+				type: "image/png",
+			},
+		],
+		techStack: [],
+		links: [],
 	},
 ];
 
