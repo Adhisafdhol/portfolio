@@ -60,6 +60,13 @@
 		var(--color-brand-1),
 		var(--color-brand-5)
 	);
+	--background-image-gr-project-btn: linear-gradient(
+		to right,
+		var(--color-bg-3),
+		var(--color-bg-2),
+		var(--color-brand-2),
+		var(--color-brand-1)
+	);
 	--typescale: 1.333;
 	--text-p: 1rem;
 	--text-h6: calc(var(--text-p) * var(--typescale));
@@ -72,6 +79,10 @@
 	--animate-slide-in: slide-in 500ms ease-in;
 	--animate-expand: expand 300ms ease-in;
 	--animate-pinch: pinch 300ms ease-in;
+	--animate-button-in: button-in 500ms ease-in;
+	--animate-button-out: button-out 500ms ease-out;
+	--animate-button-icon-in: button-icon-in 500ms ease-in;
+	--animate-button-icon-out: button-icon-out 500ms ease-out;
 
 	@keyframes slide-fade-in {
 		0% {
@@ -125,6 +136,54 @@
 			border-radius: 50%;
 		}
 	}
+
+	@keyframes button-in {
+		from {
+			border-radius: 4px;
+			background-position: 0;
+		}
+
+		to {
+			border-radiues: 16px;
+			background-position: 100%;
+		}
+	}
+
+	@keyframes button-out {
+		from {
+			border-radius: 16px;
+			background-position: 100%;
+		}
+
+		to {
+			border-radiues: 4px;
+			background-position: 0;
+		}
+	}
+
+	@keyframes button-icon-in {
+		from {
+			translatex: 0;
+			scale: 100%;
+		}
+
+		to {
+			translatex: 8px;
+			scale: 150%;
+		}
+	}
+
+	@keyframes button-icon-out {
+		from {
+			translatex: 8px;
+			scale: 150%;
+		}
+
+		to {
+			translatex: 0;
+			scale: 100%;
+		}
+	}
 }
 
 @layer base {
@@ -159,6 +218,11 @@
 
 	.forward-arrow-icon {
 		@apply rotate-180 before:bg-[url(./assets/images/arrow-icon.svg)]
+		before:content-[""];
+	}
+
+	.visit-arrow-icon {
+		@apply before:bg-[url(./assets/images/visit-arrow-icon.svg)]
 		before:content-[""];
 	}
 
