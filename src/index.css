@@ -204,6 +204,12 @@
 		before:bg-center before:bg-no-repeat hover:before:scale-105;
 	}
 
+	.icon-full {
+		@apply bg-center bg-no-repeat transition-all
+		before:h-full before:w-full before:bg-size-[100%] 
+		before:bg-center before:bg-no-repeat hover:before:scale-105;
+	}
+
 	.play-icon {
 		@apply before:bg-[url(./assets/images/play-icon.svg)] before:content-[""];
 	}
