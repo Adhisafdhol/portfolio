@@ -35,8 +35,8 @@ const ProjectTechStack: FC<ProjectTechStackProps> = ({ techStack }) => {
 					}
 				}}
 				aria-label="Slide back"
-				className={`icon back-arrow-icon flex h-[48px] w-[48px]
-          items-center rounded-full hover:scale-125`}
+				className={`icon-full back-arrow-icon flex h-[32px] w-[32px]
+          items-center rounded-full hover:scale-150`}
 			/>
 			<ul
 				ref={carouselRef}
@@ -90,8 +90,8 @@ const ProjectTechStack: FC<ProjectTechStackProps> = ({ techStack }) => {
 					}
 				}}
 				aria-label="Slide forward"
-				className={`icon forward-arrow-icon flex h-[48px] w-[48px]
-          items-center rounded-full hover:scale-125`}
+				className={`icon-full forward-arrow-icon flex h-[32px] w-[32px]
+          items-center rounded-full hover:scale-150`}
 			/>
 		</div>
 	);
