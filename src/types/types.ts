@@ -13,6 +13,11 @@ interface ProjectPreview {
 	type: string;
 }
 
+interface ProjectLink {
+	text: string;
+	url: string;
+}
+
 interface Project {
 	title: {
 		content: string;
@@ -21,6 +26,7 @@ interface Project {
 	about: string;
 	previews: ProjectPreview[];
 	techStack: Tech[];
+	links: ProjectLink[];
 }
 
-export type { Tech, ProjectPreview, Project };
+export type { Tech, ProjectPreview, Project, ProjectLink };
