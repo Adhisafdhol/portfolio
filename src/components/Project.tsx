@@ -25,7 +25,12 @@ const Project: FC<ProjectProps> = ({ project }) => {
 			<ProjectPreviewBox previews={project.previews} />
 			<div>
 				{project.links.map((link: ProjectLink) => {
-					return <ProjectLinkButton link={link} />;
+					return (
+						<ProjectLinkButton
+							key={project.title + "-" + link.text}
+							link={link}
+						/>
+					);
 				})}
 			</div>
 			{project.techStack.length ? (
