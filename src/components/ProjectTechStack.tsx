@@ -16,9 +16,18 @@ const ProjectTechStack: FC<ProjectTechStackProps> = ({ techStack }) => {
 				gap-[32px] overflow-hidden scroll-smooth rounded-[16px] px-[32px]`}>
 			<button
 				onClick={() => {
-					if (startIndex > 0) {
-						setStartIndex(startIndex - 1);
-						carouselRef.current?.children[startIndex - 1].scrollIntoView({
+					const carouselEl: null | HTMLUListElement = carouselRef.current;
+					const lastItemEl: null | HTMLLIElement = lastItemRef.current;
+
+					if (startIndex > 0 && carouselEl && lastItemEl) {
+						const shownItems: number = Math.floor(
+							carouselEl.clientWidth / lastItemEl.getBoundingClientRect().width,
+						);
+						const nextStartIndex: number =
+							shownItems - startIndex >= 0 ? shownItems - startIndex : 0;
+
+						setStartIndex(nextStartIndex);
+						carouselRef.current?.children[nextStartIndex].scrollIntoView({
 							behavior: "smooth",
 							block: "nearest",
 							inline: "start",
@@ -64,18 +73,21 @@ const ProjectTechStack: FC<ProjectTechStackProps> = ({ techStack }) => {
 							lastItemEl.getBoundingClientRect().width <
 							carouselEl?.scrollWidth
 					) {
-						setStartIndex(startIndex + 1);
-						carouselRef.current?.children[startIndex + 1].scrollIntoView({
+						const shownItems: number = Math.floor(
+							carouselEl.clientWidth / lastItemEl.getBoundingClientRect().width,
+						);
+						const nextStartIndex: number =
+							shownItems + startIndex < techStack.length - 1
+								? shownItems + startIndex
+								: techStack.length - 1;
+
+						setStartIndex(nextStartIndex);
+						carouselRef.current?.children[nextStartIndex].scrollIntoView({
 							behavior: "smooth",
 							block: "nearest",
 							inline: "start",
 						});
-					} else
-						carouselRef.current?.children[techStack.length - 1].scrollIntoView({
-							behavior: "smooth",
-							block: "nearest",
-							inline: "end",
-						});
+					}
 				}}
 				aria-label="Slide forward"
 				className={`icon forward-arrow-icon flex h-[48px] w-[48px]
