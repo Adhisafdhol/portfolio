@@ -18,6 +18,11 @@ interface ProjectLink {
 	url: string;
 }
 
+interface ProjectContribution {
+	title: string;
+	contributions: string[];
+}
+
 interface Project {
 	title: {
 		content: string;
@@ -27,6 +32,7 @@ interface Project {
 	previews: ProjectPreview[];
 	techStack: Tech[];
 	links: ProjectLink[];
+	contribution: ProjectContribution[];
 }
 
-export type { Tech, ProjectPreview, Project, ProjectLink };
+export type { Tech, ProjectPreview, Project, ProjectLink, ProjectContribution };
