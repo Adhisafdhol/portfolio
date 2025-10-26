@@ -105,6 +105,59 @@ const projects: Project[] = [
 		links: [
 			{ text: "Codebase", url: "https://github.com/Octoconvo/octoconvo" },
 		],
+		contribution: [
+			{
+				title: "Development",
+				contributions: [
+					"Planned the project initial design and specifications.",
+					"Researched project branding for a cohesive design.",
+					"Wrote and designed testing guidelines.",
+				],
+			},
+			{
+				title: "Design",
+				contributions: [
+					`Designed multiple UI components with Figma that combine
+					accessibility, practicality, and a cohesive vision.`,
+					"Designed and created brand assets with Inkscape.",
+					`Designed interactive UX experience like state indicators,
+					notifications, and hover based styling`,
+				],
+			},
+			{
+				title: "Technical",
+				contributions: [
+					`Architected a hybrid event-driven architecture and 
+					REST API to deliver real-time experience.`,
+					`Implemented robust client and server validation including file
+				validation for security and better user experience.`,
+					`Implemented a real-time notification system with buffered state
+					updates. This allows the component to keep the previous notification
+					state after the notifications' read statuses are updated to keep the
+					new notification indicator styles until the user closes the modal.`,
+					`Implemented image preview functionality with canvas API for file
+					inputs. The implementation successfully reduces a 20 mb image down to
+					less than 100KB. This drastically improves performance and user
+					experience when selecting multiple huge images.`,
+					`Integrated Sharp to compress images before uploading the files to the
+					Supabase file storage to reduce storage usage and improve
+					performance.`,
+					`Architected database schemas diagram for the system.`,
+					`Implemented authentication and authorisation to prevent users from
+					accessing unauthorised resources.`,
+					`Wrote scripts that generate seed database data for testing the
+					backend API endpoints. The scripts have three modes to be used for 
+					different purposes. The 'COMPACT' mode is used for general integration
+					test and the 'EXTENSIVE' mode is used for early performance checks by
+					generating big dataset to ensure the queries don't choke on medium
+					load.`,
+					`Wrote hundreds of tests with 90+% coverage to ensure system stability
+					and ease refactoring and future updates.`,
+					`Implemented cursor-based paginatin to explore communities, users and
+					more.`,
+				],
+			},
+		],
 	},
 	{
 		title: {
@@ -128,6 +181,7 @@ const projects: Project[] = [
 		],
 		techStack: [],
 		links: [],
+		contribution: [],
 	},
 ];
 
