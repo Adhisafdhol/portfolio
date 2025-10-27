@@ -184,6 +184,16 @@
 			scale: 100%;
 		}
 	}
+
+	@keyframes expand-down {
+		from {
+			scale: 100% 0;
+		}
+
+		to {
+			scale: 100% 100%;
+		}
+	}
 }
 
 @layer base {
@@ -236,6 +246,50 @@
 		width: 0px;
 		height: 0px;
 		background: transparent;
+	}
+
+	.pinch-up {
+		opacity: 0;
+		max-height: 0;
+		overflow: hidden;
+		transform: scaleY(0);
+		transform-origin: top;
+		transition:
+			max-height 600ms ease-out,
+			transform 600ms ease-in,
+			opacity 600ms ease-in;
+	}
+
+	.expand-down {
+		opacity: 1;
+		max-height: 150%;
+		overflow: hidden;
+		transform: scaleY(1);
+		transform-origin: top;
+		transition:
+			max-height 300ms ease-in,
+			transform 300ms ease-in,
+			opacity 300ms ease-in;
+	}
+
+	.rotate-contribution-active {
+		transform: rotate(90deg);
+		transition: transform 500ms ease;
+	}
+
+	.rotate-contribution-active:hover {
+		transform: rotate(90deg) translateX(-4px) scale(1.1);
+		transition: transform 500ms ease;
+	}
+
+	.rotate-contribution {
+		transform: rotate(0);
+		transition: transform 500ms ease;
+	}
+
+	.rotate-contribution:hover {
+		transform: rotate(0) translateX(-8px) scale(1.1);
+		transition: transform 500ms ease;
 	}
 }
 
