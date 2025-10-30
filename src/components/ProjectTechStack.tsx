@@ -87,6 +87,12 @@ const ProjectTechStack: FC<ProjectTechStackProps> = ({ techStack }) => {
 							block: "nearest",
 							inline: "start",
 						});
+					} else {
+						carouselRef.current?.children[techStack.length - 1].scrollIntoView({
+							behavior: "smooth",
+							block: "nearest",
+							inline: "start",
+						});
 					}
 				}}
 				aria-label="Slide forward"
