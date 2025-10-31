@@ -3,6 +3,7 @@ import type { Project as ProjectI, ProjectLink } from "../types/types";
 import ProjectPreviewBox from "./ProjectPreviewBox";
 import ProjectTechStack from "./ProjectTechStack";
 import ProjectLinkButton from "./ProjectLinkButton";
+import ProjectContribution from "./ProjectContribution";
 
 interface ProjectProps {
 	project: ProjectI;
@@ -35,6 +36,9 @@ const Project: FC<ProjectProps> = ({ project }) => {
 			</div>
 			{project.techStack.length ? (
 				<ProjectTechStack techStack={project.techStack} />
+			) : null}
+			{project.contribution.length ? (
+				<ProjectContribution contributions={project.contribution} />
 			) : null}
 		</article>
 	);
