@@ -35,4 +35,23 @@ interface Project {
 	contribution: ProjectContribution[];
 }
 
-export type { Tech, ProjectPreview, Project, ProjectLink, ProjectContribution };
+interface Social {
+	text: string;
+	icon: string;
+	url: string;
+}
+
+interface AboutMe {
+	profile: string[];
+	github: Social;
+}
+
+export type {
+	Tech,
+	ProjectPreview,
+	Project,
+	ProjectLink,
+	ProjectContribution,
+	Social,
+	AboutMe,
+};
