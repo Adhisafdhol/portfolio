@@ -21,7 +21,7 @@
 	--color-foreground: var(--color-fg-1);
 	--color-background: var(--color-bg-1);
 	--background-image-gr-bg-1-b: linear-gradient(
-		to right,
+		to bottom,
 		var(--color-bg-1),
 		var(--color-bg-2)
 	);
