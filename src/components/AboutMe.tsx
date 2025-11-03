@@ -1,4 +1,4 @@
-import { useRef } from "react";
+import { Fragment, useRef } from "react";
 import aboutMe from "../data/aboutMe";
 
 const AboutMe = () => {
@@ -11,16 +11,18 @@ const AboutMe = () => {
 				About me
 			</h2>
 			<div>
-				{aboutMe.profile.map((paragraph: string): React.JSX.Element => {
-					return (
-						<>
-							<p className="text-h6 text-fg-2 max-w-[72ch] text-start">
-								{paragraph}
-							</p>
-							<br />
-						</>
-					);
-				})}
+				{aboutMe.profile.map(
+					(paragraph: string, index: number): React.JSX.Element => {
+						return (
+							<Fragment key={index}>
+								<p className="text-h6 text-fg-2 max-w-[72ch] text-start">
+									{paragraph}
+								</p>
+								<br />
+							</Fragment>
+						);
+					},
+				)}
 			</div>
 			<button
 				onMouseEnter={(e: React.MouseEvent<HTMLButtonElement>) => {
