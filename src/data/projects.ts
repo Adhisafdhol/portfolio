@@ -109,7 +109,7 @@ const projects: Project[] = [
 			{
 				title: "Development",
 				contributions: [
-					"Planned the project initial design and specifications.",
+					"Planned the project's initial design and specifications.",
 					"Researched project branding for a cohesive design.",
 					"Wrote and designed testing guidelines.",
 				],
@@ -121,7 +121,7 @@ const projects: Project[] = [
 					accessibility, practicality, and a cohesive vision.`,
 					"Designed and created brand assets with Inkscape.",
 					`Designed interactive UX experience like state indicators,
-					notifications, and hover based styling`,
+					notifications, and hover-based styling`,
 				],
 			},
 			{
@@ -148,8 +148,8 @@ const projects: Project[] = [
 					`Wrote scripts that generate seed database data for testing the
 					backend API endpoints. The scripts have three modes to be used for 
 					different purposes. The 'COMPACT' mode is used for general integration
-					test and the 'EXTENSIVE' mode is used for early performance checks by
-					generating big dataset to ensure the queries don't choke on medium
+					testing, and the 'EXTENSIVE' mode is used for early performance checks by
+					generating a big dataset to ensure the queries don't choke on medium
 					load.`,
 					`Wrote hundreds of tests with 90+% coverage to ensure system stability
 					and ease refactoring and future updates.`,
