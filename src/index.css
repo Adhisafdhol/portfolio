@@ -343,3 +343,7 @@ body {
 	background-color: var(--color-bg-1);
 	color: var(--color-fg-1);
 }
+
+input:focus-visible {
+	outline-color: var(--color-brand-3);
+}
