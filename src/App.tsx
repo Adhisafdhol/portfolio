@@ -4,6 +4,7 @@ import SkillsSection from "./components/SkillsSection";
 import ProjectSection from "./components/ProjectsSection";
 import AboutMe from "./components/AboutMe";
 import ContactMe from "./components/ContactMe";
+import Footer from "./components/Footer";
 
 function App() {
 	return (
@@ -13,6 +14,7 @@ function App() {
 			<ProjectSection />
 			<AboutMe />
 			<ContactMe />
+			<Footer />
 		</>
 	);
 }
