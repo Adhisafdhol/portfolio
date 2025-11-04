@@ -297,6 +297,24 @@
 		transform: rotate(0) translateX(-8px) scale(1.1);
 		transition: transform 500ms ease;
 	}
+
+	.scrollbar::-webkit-scrollbar {
+		width: 0.3vw;
+		height: 0.3vh;
+	}
+
+	.scrollbar::-webkit-sccrollbar-track {
+		background-color: var(--color-bg-2);
+	}
+
+	.scrollbar::-webkit-scrollbar-thumb {
+		background: var(--color-brand-1);
+		border-radius: 8px;
+	}
+
+	.scrollbar::-webkit-scrollbar-thumb:hover {
+		background: var(--color-brand-3);
+	}
 }
 
 body {
