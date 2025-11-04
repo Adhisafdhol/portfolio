@@ -3,6 +3,7 @@ import HeroHeader from "./components/HeroHeader";
 import SkillsSection from "./components/SkillsSection";
 import ProjectSection from "./components/ProjectsSection";
 import AboutMe from "./components/AboutMe";
+import ContactMe from "./components/ContactMe";
 
 function App() {
 	return (
@@ -11,6 +12,7 @@ function App() {
 			<SkillsSection />
 			<ProjectSection />
 			<AboutMe />
+			<ContactMe />
 		</>
 	);
 }
