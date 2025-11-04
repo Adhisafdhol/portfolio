@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useLayoutEffect, useRef, useState } from "react";
 import HeaderScrambleText from "./HeaderScrambleText";
 import HeroHeading from "./HeroHeading";
 import RollingText from "./RollingText";
@@ -24,6 +24,8 @@ const HeroHeader = () => {
 	const gradientRef = useRef<null | HTMLParagraphElement>(null);
 	const [fromGradientIndex, setFromGradientIndex] = useState<number>(0);
 	const [isReversed, setIsReversed] = useState<boolean>(false);
+	const headerWidth = useRef<null | number>(null);
+	const headerRef = useRef<null | HTMLHeadElement>(null);
 
 	useEffect(() => {
 		if (fromGradientIndex === 0) {
@@ -51,10 +53,28 @@ const HeroHeader = () => {
 		};
 	}, [fromGradientIndex, isReversed]);
 
+	useLayoutEffect(() => {
+		const onResize = (): void => {
+			const header: null | HTMLHeadElement = headerRef.current;
+
+			if (header) {
+				const { width } = header.getBoundingClientRect();
+				headerWidth.current = width;
+			}
+		};
+
+		window.addEventListener("resize", onResize);
+
+		return () => {
+			window.removeEventListener("resize", onResize);
+		};
+	}, []);
+
 	return (
 		<>
 			<header
-				className={`relative flex min-h-[100dvh] min-w-full
+				ref={headerRef}
+				className={`relative flex min-h-[min(100dvh,1366px)] min-w-full
 		flex-col items-start justify-center gap-[64px] p-[64px]`}>
 				<div className="z-10 flex flex-col items-start">
 					<HeroHeading>Adhis Afdhol</HeroHeading>
@@ -66,7 +86,9 @@ const HeroHeader = () => {
 							" " +
 							fromGradients[fromGradientIndex] +
 							" " +
-							toGradients[0]
+							(headerWidth.current && headerWidth.current <= 1080
+								? "to-fg-1"
+								: "toGradients[0]")
 						}>
 						Fullstack Developer
 					</p>
@@ -98,8 +120,8 @@ const HeroHeader = () => {
 				max-w-full overflow-hidden`}>
 					<div className="relative top-0 h-[100dvh] w-[100dvw]">
 						<svg
-							className="w-[calc(100dvh * 1.33)] absolute top-0 right-0 
-						z-[-1] h-[100dvh]"
+							className="absolute top-0 right-0 z-[-1] 
+						h-[min(100dvh,1366px)] w-[calc(100dvh*1.33)]"
 							viewBox="0 0 1440 1080"
 							fill="none"
 							version="1.1"
