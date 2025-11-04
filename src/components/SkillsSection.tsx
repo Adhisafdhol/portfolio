@@ -102,7 +102,7 @@ const SkillsSection = () => {
 			<div
 				className="bg-gr-icy flex flex-col items-start gap-[32px] 
 			rounded-[16px] p-[32px]">
-				<h2 ref={headingRef} className="text-h2 text-bg-1 font-bold">
+				<h2 ref={headingRef} className="text-h3 text-bg-1 font-bold">
 					Tech-Stack
 				</h2>
 				<TechStackContext
