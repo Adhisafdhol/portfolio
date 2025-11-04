@@ -12,8 +12,9 @@ const ProjectTechStack: FC<ProjectTechStackProps> = ({ techStack }) => {
 
 	return (
 		<div
-			className={`bg-gr-icy text-h6 relative flex max-w-[72ch] items-center 
-				gap-[32px] overflow-hidden scroll-smooth rounded-[16px] px-[32px]`}>
+			className={`bg-gr-icy text-h6 relative flex max-w-[min(72ch,100%)] 
+				items-center gap-[32px] overflow-hidden scroll-smooth rounded-[16px]
+				px-[32px]`}>
 			<button
 				onClick={() => {
 					const carouselEl: null | HTMLUListElement = carouselRef.current;
