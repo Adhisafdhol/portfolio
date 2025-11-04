@@ -46,6 +46,12 @@ interface AboutMe {
 	github: Social;
 }
 
+interface ContactForm {
+	fullName: string;
+	email?: string;
+	message?: string;
+}
+
 export type {
 	Tech,
 	ProjectPreview,
@@ -54,4 +60,5 @@ export type {
 	ProjectContribution,
 	Social,
 	AboutMe,
+	ContactForm,
 };
