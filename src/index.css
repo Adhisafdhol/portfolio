@@ -5,6 +5,7 @@
 
 @theme {
 	--font-sans: "inter", system-ui, "sans-serif";
+	--color-error: #ff3f58;
 	--color-bg-1: #000000;
 	--color-bg-2: #070707;
 	--color-bg-3: #24293a;
