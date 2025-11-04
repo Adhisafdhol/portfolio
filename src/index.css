@@ -85,7 +85,9 @@
 	--animate-slide-in: slide-in 500ms ease-in;
 	--animate-expand: expand 300ms ease-in;
 	--animate-pinch: pinch 300ms ease-in;
+	--animate-button-in-plain: button-in-plain 500ms ease-in;
 	--animate-button-in: button-in 500ms ease-in;
+	--animate-button-out-plain: button-out-plain 500ms ease-out;
 	--animate-button-out: button-out 500ms ease-out;
 	--animate-button-icon-in: button-icon-in 500ms ease-in;
 	--animate-button-icon-out: button-icon-out 500ms ease-out;
@@ -143,6 +145,16 @@
 		}
 	}
 
+	@keyframes button-in-plain {
+		from {
+			background-position: 0;
+		}
+
+		to {
+			background-position: 100%;
+		}
+	}
+
 	@keyframes button-in {
 		from {
 			border-radius: 4px;
@@ -152,6 +164,16 @@
 		to {
 			border-radiues: 16px;
 			background-position: 100%;
+		}
+	}
+
+	@keyframes button-out-plain {
+		from {
+			background-position: 100%;
+		}
+
+		to {
+			background-position: 0;
 		}
 	}
 
