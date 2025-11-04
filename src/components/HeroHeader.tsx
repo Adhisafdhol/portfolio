@@ -88,7 +88,7 @@ const HeroHeader = () => {
 							" " +
 							(headerWidth.current && headerWidth.current <= 1080
 								? "to-fg-1"
-								: "toGradients[0]")
+								: toGradients[0])
 						}>
 						Fullstack Developer
 					</p>
