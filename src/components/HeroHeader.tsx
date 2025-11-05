@@ -75,7 +75,7 @@ const HeroHeader = () => {
 			<header
 				ref={headerRef}
 				className={`relative flex min-h-[min(100dvh,1366px)] min-w-full
-		flex-col items-start justify-center gap-[64px] p-[64px]`}>
+		flex-col items-start justify-center gap-[64px] p-[16px] sm:p-[64px]`}>
 				<div className="z-10 flex flex-col items-start">
 					<HeroHeading>Adhis Afdhol</HeroHeading>
 					<p
