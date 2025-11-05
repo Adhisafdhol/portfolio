@@ -13,7 +13,7 @@ const ProjectPreviewBox: FC<ProjectPreviewProps> = ({ previews }) => {
 		<section className="flex flex-col items-center gap-[32px]">
 			<div className="flex flex-col gap-[32px] rounded-[8px] rounded-b-[32px]">
 				<ul
-					className="text-h6 aspect-[16/9] w-[min(72ch,100%)]
+					className="text-h6 aspect-[16/9] w-[min(72ch,100%)] max-w-[72ch]
 				overflow-hidden">
 					{previews.map((preview: ProjectPreview, index: number) => {
 						return (
