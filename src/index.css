@@ -3,6 +3,16 @@
 @import "tailwindcss/preflight.css" layer(base);
 @import "tailwindcss/utilities.css" layer(utilities);
 
+:root {
+	--typescale: 1.333;
+}
+
+@media (width < 1080px) {
+	:root {
+		--typescale: 1.25;
+	}
+}
+
 @theme {
 	--font-sans: "inter", system-ui, "sans-serif";
 	--color-error: #ff3f58;
@@ -73,7 +83,6 @@
 		var(--color-brand-2),
 		var(--color-brand-1)
 	);
-	--typescale: 1.333;
 	--text-p: 1rem;
 	--text-s: calc(var(--text-p) / var(--typescale));
 	--text-h6: calc(var(--text-p) * var(--typescale));
