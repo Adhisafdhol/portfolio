@@ -27,7 +27,7 @@ const Contribution: FC<ContributionProps> = ({ contribution }) => {
 			<ul
 				ref={contributionUListRef}
 				className={
-					"flex w-[72ch] flex-col items-start" +
+					"flex w-[min(100%,72ch)] flex-col items-start" +
 					(isOpen ? " expand-down" : " pinch-up overflow-hidden")
 				}>
 				{contribution.contributions.map(
