@@ -27,7 +27,7 @@ const Contribution: FC<ContributionProps> = ({ contribution }) => {
 			<ul
 				ref={contributionUListRef}
 				className={
-					"flex w-[min(100%,72ch)] flex-col items-start" +
+					"text-h6 flex w-[min(72ch,100%)] flex-col items-start" +
 					(isOpen ? " expand-down" : " pinch-up overflow-hidden")
 				}>
 				{contribution.contributions.map(
@@ -35,7 +35,7 @@ const Contribution: FC<ContributionProps> = ({ contribution }) => {
 						return (
 							<li
 								key={index}
-								className={`w-full border-b-[1px] 
+								className={`text-p w-full border-b-[1px]
                       border-b-[rgba(221,222,227,0.2)] py-[32px] text-left`}>
 								{contribution}
 							</li>
