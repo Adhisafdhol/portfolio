@@ -1,4 +1,4 @@
-import { useEffect, useLayoutEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import HeaderScrambleText from "./HeaderScrambleText";
 import HeroHeading from "./HeroHeading";
 import RollingText from "./RollingText";
@@ -24,7 +24,6 @@ const HeroHeader = () => {
 	const gradientRef = useRef<null | HTMLParagraphElement>(null);
 	const [fromGradientIndex, setFromGradientIndex] = useState<number>(0);
 	const [isReversed, setIsReversed] = useState<boolean>(false);
-	const headerWidth = useRef<null | number>(null);
 	const headerRef = useRef<null | HTMLHeadElement>(null);
 
 	useEffect(() => {
@@ -53,23 +52,6 @@ const HeroHeader = () => {
 		};
 	}, [fromGradientIndex, isReversed]);
 
-	useLayoutEffect(() => {
-		const onResize = (): void => {
-			const header: null | HTMLHeadElement = headerRef.current;
-
-			if (header) {
-				const { width } = header.getBoundingClientRect();
-				headerWidth.current = width;
-			}
-		};
-
-		window.addEventListener("resize", onResize);
-
-		return () => {
-			window.removeEventListener("resize", onResize);
-		};
-	}, []);
-
 	return (
 		<>
 			<header
@@ -86,9 +68,7 @@ const HeroHeader = () => {
 							" " +
 							fromGradients[fromGradientIndex] +
 							" " +
-							(headerWidth.current && headerWidth.current <= 1080
-								? "to-fg-1"
-								: toGradients[0])
+							toGradients[0]
 						}>
 						Fullstack Developer
 					</p>
@@ -120,8 +100,11 @@ const HeroHeader = () => {
 				max-w-full overflow-hidden`}>
 					<div className="relative top-0 h-[100dvh] w-[100dvw]">
 						<svg
-							className="absolute top-0 right-0 z-[-1] 
-						h-[min(100dvh,1366px)] w-[calc(100dvh*1.33)]"
+							className="lg:translate-x-auto absolute top-[25%] left-0 
+							z-[-1] w-[200dvw] translate-x-[-33%] sm:top-0 
+							sm:right-0 sm:left-auto
+							sm:h-[min(100dvh,1366px)] sm:w-[calc(100dvh*1.33)]
+							sm:translate-x-[20%] md:translate-x-[15%] lg:translate-x-0"
 							viewBox="0 0 1440 1080"
 							fill="none"
 							version="1.1"
