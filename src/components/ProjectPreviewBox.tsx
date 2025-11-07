@@ -50,11 +50,12 @@ const ProjectPreviewBox: FC<ProjectPreviewProps> = ({ previews }) => {
 						<button
 							key={index}
 							className={
-								`hover:border-brand-3 min-h-[16px] min-w-[16px] rounded-full 
-								border-[1px] border-[transparent] backdrop-blur-md  
-								hover:bg-[rgba(59,193,231,0.6)]` +
+								`hover:border-brand-3 min-h-[12px] min-w-[12px] rounded-full
+								border-[1px] border-[transparent] backdrop-blur-md
+								hover:bg-[rgba(59,193,231,0.6)]
+								sm:min-h-[16px] sm:min-w-[16px]` +
 								(activeIndex === index
-									? " bg-gr-icy animate-expand w-[48px]"
+									? " bg-gr-icy animate-expand w-[36px] sm:w-[48px]"
 									: " bg-bg-3 animate-pinch")
 							}
 							onClick={() => {
