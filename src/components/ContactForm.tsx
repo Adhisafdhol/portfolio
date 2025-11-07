@@ -54,7 +54,7 @@ const ContactForm = () => {
 			<form
 				method="POST"
 				onSubmit={handleSubmit(onSubmit)}
-				className="flex flex-col items-start gap-[32px]">
+				className="box-border flex w-full flex-col items-start gap-[32px]">
 				<InputContainer>
 					<label className="text-h6" htmlFor="full-name">
 						Full Name
@@ -97,8 +97,8 @@ const ContactForm = () => {
 							<p className="text-p text-error">{errors.message.message}</p>
 						)}
 						<textarea
-							className={`bg-fg-1 text-bg-2 scrollbar w-full rounded-[4px]
-              px-[16px] py-[8px]`}
+							className={`bg-fg-1 text-bg-2 scrollbar box-border w-full
+								rounded-[4px] px-[16px] py-[8px]`}
 							rows={8}
 							id="message"
 							{...register("message", contactFormValidation.message)}
