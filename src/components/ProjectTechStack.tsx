@@ -43,7 +43,7 @@ const ProjectTechStack: FC<ProjectTechStackProps> = ({ techStack }) => {
 				ref={carouselRef}
 				className={`text-h6 scrollbar-hidden box-border flex max-w-[72ch] snap-x
 				gap-[16px] overflow-x-scroll overflow-y-visible scroll-smooth
-				rounded-[16px] py-[16px] sm:gap-[32px] sm:py-[32px]`}>
+				rounded-[16px] py-[16px] pr-[8px] sm:gap-[32px] sm:py-[32px]`}>
 				{techStack.map((tech: Tech, index: number) => {
 					return (
 						<li
