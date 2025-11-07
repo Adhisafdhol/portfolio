@@ -13,8 +13,8 @@ const ProjectTechStack: FC<ProjectTechStackProps> = ({ techStack }) => {
 	return (
 		<div
 			className={`bg-gr-icy text-h6 relative flex max-w-[min(72ch,100%)] 
-				items-center gap-[32px] overflow-hidden scroll-smooth rounded-[16px]
-				px-[32px]`}>
+				items-center gap-[16px] overflow-hidden scroll-smooth rounded-[16px]
+				px-[16px] sm:gap-[32px] sm:px-[32px]`}>
 			<button
 				onClick={() => {
 					const carouselEl: null | HTMLUListElement = carouselRef.current;
@@ -42,8 +42,8 @@ const ProjectTechStack: FC<ProjectTechStackProps> = ({ techStack }) => {
 			<ul
 				ref={carouselRef}
 				className={`text-h6 scrollbar-hidden box-border flex max-w-[72ch] snap-x
-				gap-[32px] overflow-x-scroll overflow-y-visible scroll-smooth
-				rounded-[16px] py-[32px]`}>
+				gap-[16px] overflow-x-scroll overflow-y-visible scroll-smooth
+				rounded-[16px] py-[16px] sm:gap-[32px] sm:py-[32px]`}>
 				{techStack.map((tech: Tech, index: number) => {
 					return (
 						<li
@@ -55,7 +55,8 @@ const ProjectTechStack: FC<ProjectTechStackProps> = ({ techStack }) => {
 							<img
 								src={tech.icon.light}
 								alt={tech.text + " icon"}
-								className="h-[32px] min-h-[32px] w-[32px] min-w-[32px]"
+								className="h-[24px] min-h-[24px] w-[24px] min-w-[24px]
+								sm:h-[32px] sm:min-h-[32px] sm:w-[32px] sm:min-w-[32px]"
 							/>
 						</li>
 					);
