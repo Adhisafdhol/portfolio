@@ -94,9 +94,10 @@ const Video: FC<VideoProps> = ({ src, type }) => {
 			</video>
 			<button
 				className={
-					`icon play-icon absolute flex h-[128px] w-[128px] items-center
-          justify-center rounded-full bg-[rgba(7,7,7,0.6)] backdrop-blur-2xl
-          hover:bg-[rgba(234,243,250,0.3)]` +
+					`icon play-icon absolute flex h-[64px] w-[64px] items-center
+					justify-center rounded-full bg-[rgba(7,7,7,0.6)] backdrop-blur-2xl 
+					hover:bg-[rgba(234,243,250,0.3)] sm:h-[128px]
+					sm:w-[128px]` +
 					(isPlaying ? " pause-icon" : " play-icon") +
 					(isControlShown ? "" : " hidden")
 				}
