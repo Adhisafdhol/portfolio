@@ -68,28 +68,13 @@ const Video: FC<VideoProps> = ({ src, type }) => {
 		timeoutIds.current = [...timeoutIds.current, id];
 	};
 
-	const handleMouseLeave = (): void => {
-		clearTimeouts();
-		if (isPlaying) {
-			setIsControlShown(false);
-		} else {
-			setIsControlShown(true);
-		}
-	};
-
 	return (
 		<div
 			className="relative flex items-center justify-center rounded-[16px]"
-			onMouseEnter={() => {
-				showVideoController();
-			}}
-			onMouseMove={() => {
+			onClick={() => {
 				showVideoController();
 			}}>
-			<video
-				ref={videoRef}
-				className="rounded-[16px]"
-				onMouseLeave={handleMouseLeave}>
+			<video ref={videoRef} className="rounded-[16px]">
 				<source src={src} type={type} />
 			</video>
 			<button
