@@ -179,8 +179,8 @@ const projects: Project[] = [
 				type: "image/png",
 			},
 		],
-		techStack: [],
-		links: [],
+		techStack: [techs.html, techs.css, techs.javascript, techs.webpack],
+		links: [{ text: "Live", url: "https://adhisafdhol.github.io/battleship/" }],
 		contribution: [],
 	},
 ];
