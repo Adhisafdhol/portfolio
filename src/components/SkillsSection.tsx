@@ -98,7 +98,7 @@ const SkillsSection = () => {
 		<section
 			ref={sectionRef}
 			className="bg-bg-gr-1 flex min-h-[100dvh] w-full items-center 
-		p-[16px] sm:p-[64px]">
+		px-[16px] py-[64px] sm:p-[64px]">
 			<div
 				className="bg-gr-icy flex flex-col items-start gap-[24px] rounded-[16px] 
 			p-[16px] sm:gap-[32px] sm:p-[32px]">
