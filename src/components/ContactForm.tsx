@@ -56,7 +56,7 @@ const ContactForm = () => {
 				onSubmit={handleSubmit(onSubmit)}
 				className="box-border flex w-full flex-col items-start gap-[32px]">
 				<InputContainer>
-					<label className="text-h6" htmlFor="full-name">
+					<label className="text-p sm:text-h6" htmlFor="full-name">
 						Full Name
 					</label>
 					<div className="flex w-full flex-col items-start gap-[8px]">
@@ -64,15 +64,15 @@ const ContactForm = () => {
 							<p className="text-p text-error">{errors.fullName.message}</p>
 						)}
 						<input
-							className={`bg-fg-1 text-bg-2 w-full rounded-[4px] px-[16px]
-              py-[8px]`}
+							className={`bg-fg-1 text-bg-2 w-full rounded-[4px] px-[8px]
+								py-[4px] sm:px-[16px] sm:py-[8px]`}
 							id="full-name"
 							{...register("fullName", contactFormValidation.fullName)}
 						/>
 					</div>
 				</InputContainer>
 				<InputContainer>
-					<label className="text-h6" htmlFor="email">
+					<label className="text-p sm:text-h6" htmlFor="email">
 						Email
 					</label>
 
@@ -81,15 +81,15 @@ const ContactForm = () => {
 							<p className="text-p text-error">{errors.email.message}</p>
 						)}
 						<input
-							className={`bg-fg-1 text-bg-2 w-full rounded-[4px] px-[16px]
-              py-[8px]`}
+							className={`bg-fg-1 text-bg-2 w-full rounded-[4px] px-[8px]
+								py-[4px] sm:px-[16px] sm:py-[8px]`}
 							id="email"
 							{...register("email", contactFormValidation.email)}
 						/>
 					</div>
 				</InputContainer>
 				<InputContainer>
-					<label className="text-h6" htmlFor="message">
+					<label className="text-p sm:text-h6" htmlFor="message">
 						Message
 					</label>
 					<div className="flex w-full flex-col items-start gap-[8px]">
@@ -98,7 +98,7 @@ const ContactForm = () => {
 						)}
 						<textarea
 							className={`bg-fg-1 text-bg-2 scrollbar box-border w-full
-								rounded-[4px] px-[16px] py-[8px]`}
+								rounded-[4px] px-[8px] py-[4px] sm:px-[16px] sm:py-[8px]`}
 							rows={8}
 							id="message"
 							{...register("message", contactFormValidation.message)}
@@ -107,7 +107,7 @@ const ContactForm = () => {
 				</InputContainer>
 				<button
 					className={`bg-gr-project-btn text-h6 text-fg-1 
-              animate-button-out-plain hover:animate-button-in-plain h-h6
+              animate-button-out-plain hover:animate-button-in-plain
               flex gap-[8px] rounded-[4px] bg-linear-to-r bg-size-[300%]
               px-[32px] py-[8px] hover:rounded-[4px] hover:bg-position-[100%]`}>
 					{isSubmitting ? "Sending" : "Send"}
