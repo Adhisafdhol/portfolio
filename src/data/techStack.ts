@@ -20,6 +20,7 @@ import bashIcon from "../assets/images/bash-icon.svg";
 import tanstackQueryIcon from "../assets/images/tanstack-query-icon.png";
 import gsapIcon from "../assets/images/gsap-icon.svg";
 import tailwindCSSIcon from "../assets/images/tailwindcss-icon.svg";
+import webpackIcon from "../assets/images/webpack-icon.svg";
 
 interface Techs {
 	html: Tech;
@@ -41,6 +42,7 @@ interface Techs {
 	git: Tech;
 	figma: Tech;
 	inkscape: Tech;
+	webpack: Tech;
 }
 
 const techs: Techs = {
@@ -59,6 +61,13 @@ const techs: Techs = {
 	typescript: {
 		text: "Typescript",
 		icon: { dark: typescriptIcon, light: typescriptIcon },
+	},
+	webpack: {
+		text: "Webpack",
+		icon: {
+			dark: webpackIcon,
+			light: webpackIcon,
+		},
 	},
 	bash: { text: "Bash", icon: { dark: bashIcon, light: bashIcon } },
 	socketIO: {
