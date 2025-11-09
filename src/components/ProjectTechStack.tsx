@@ -36,8 +36,9 @@ const ProjectTechStack: FC<ProjectTechStackProps> = ({ techStack }) => {
 					}
 				}}
 				aria-label="Slide back"
-				className={`icon-full back-arrow-icon flex h-[32px] w-[32px]
-          items-center rounded-full hover:scale-150`}
+				className={`icon-full back-arrow-icon flex h-[24px] min-h-[24px]
+					w-[24px] min-w-[24px] items-center rounded-full hover:scale-125
+          sm:h-[32px] sm:min-h-[32px] sm:w-[32px] sm:min-w-[32px]`}
 			/>
 			<ul
 				ref={carouselRef}
@@ -98,8 +99,9 @@ const ProjectTechStack: FC<ProjectTechStackProps> = ({ techStack }) => {
 					}
 				}}
 				aria-label="Slide forward"
-				className={`icon-full forward-arrow-icon flex h-[32px] w-[32px]
-          items-center rounded-full hover:scale-150`}
+				className={`icon-full forward-arrow-icon flex h-[24px] min-h-[24px] 
+					w-[24px] min-w-[24px] items-center rounded-full hover:scale-125
+          sm:h-[32px] sm:min-h-[32px] sm:w-[32px] sm:min-w-[32px]`}
 			/>
 		</div>
 	);
