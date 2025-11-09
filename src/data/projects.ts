@@ -89,6 +89,8 @@ const projects: Project[] = [
 			},
 		],
 		techStack: [
+			techs.html,
+			techs.css,
 			techs.typescript,
 			techs.nodeJS,
 			techs.express,
