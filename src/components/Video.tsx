@@ -79,7 +79,8 @@ const Video: FC<VideoProps> = ({ src, type }) => {
 
 	return (
 		<div
-			className="relative flex items-center justify-center rounded-[16px]"
+			className="relative flex items-center justify-center rounded-[8px]
+			sm:rounded-[16px]"
 			onMouseEnter={() => {
 				showVideoController();
 			}}
@@ -88,7 +89,7 @@ const Video: FC<VideoProps> = ({ src, type }) => {
 			}}>
 			<video
 				ref={videoRef}
-				className="rounded-[16px]"
+				className="rounded-[8px] sm:rounded-[16px]"
 				onMouseLeave={handleMouseLeave}>
 				<source src={src} type={type} />
 			</video>
