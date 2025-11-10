@@ -56,6 +56,7 @@ const ProjectTechStack: FC<ProjectTechStackProps> = ({ techStack }) => {
 							<img
 								src={tech.icon.light}
 								alt={tech.text + " icon"}
+								loading="lazy"
 								className="h-[24px] min-h-[24px] w-[24px] min-w-[24px]
 								sm:h-[32px] sm:min-h-[32px] sm:w-[32px] sm:min-w-[32px]"
 							/>
