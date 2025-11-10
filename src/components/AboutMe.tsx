@@ -59,6 +59,7 @@ const AboutMe = () => {
 				<div className="flex items-center gap-[16px]">
 					<a href={aboutMe.github.url}>{aboutMe.github.text}</a>
 					<img
+						loading="lazy"
 						src={aboutMe.github.icon}
 						alt={`${aboutMe.github.text} icon`}
 						className="h-[1.5em] min-h-[1.5em] w-[1.5em] min-w-[1.5em]"
