@@ -96,14 +96,17 @@ const HeroHeader = () => {
 					<span className="text-h4">software.</span>
 				</p>
 				<div
-					className={`pointer-events-none absolute top-0 left-0 max-h-[100dvh] 
+					className={`pointer-events-none absolute top-0 left-0
+						max-h-[min(100dvh,1366px)] 
 				max-w-full overflow-hidden`}>
-					<div className="relative top-0 h-[100dvh] w-[100dvw]">
+					<div
+						className="relative top-0 h-[min(100dvh,1366px)]
+					w-[min(100dvw,calc(1920px+64px))]">
 						<svg
 							className="lg:translate-x-auto absolute top-[25%] left-0 
 							z-[-1] w-[200dvw] translate-x-[-33%] sm:top-0 
 							sm:right-0 sm:left-auto
-							sm:h-[min(100dvh,1366px)] sm:w-[calc(100dvh*1.33)]
+							sm:h-[min(100dvh,1366px)] sm:w-[min(1920px,calc(100dvh*1.33))]
 							sm:translate-x-[20%] md:translate-x-[15%] lg:translate-x-0"
 							viewBox="0 0 1440 1080"
 							fill="none"
