@@ -25,6 +25,7 @@ const ProjectPreviewBox: FC<ProjectPreviewProps> = ({ previews }) => {
 								}>
 								{preview.type.split("/")[0] === "image" ? (
 									<img
+										loading="lazy"
 										className="rounded-[inherit]"
 										src={preview.url}
 										alt={preview.alt}
