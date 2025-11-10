@@ -45,7 +45,7 @@ const ProjectPreviewBox: FC<ProjectPreviewProps> = ({ previews }) => {
 				</div>
 			</div>
 			<nav className="flex gap-[16px]">
-				{previews.map((_preview: ProjectPreview, index: number) => {
+				{previews.map((preview: ProjectPreview, index: number) => {
 					return (
 						<button
 							key={index}
@@ -58,6 +58,7 @@ const ProjectPreviewBox: FC<ProjectPreviewProps> = ({ previews }) => {
 									? " bg-gr-icy animate-expand w-[36px] sm:w-[48px]"
 									: " bg-bg-3 animate-pinch")
 							}
+							aria-label={`See ${preview} image`}
 							onClick={() => {
 								setActiveIndex(index);
 							}}></button>
