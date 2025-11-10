@@ -17,7 +17,7 @@ import gitIcon from "../assets/images/git-icon.svg";
 import figmaIcon from "../assets/images/figma-icon.svg";
 import inkscapeIcon from "../assets/images/inkscape-icon.svg";
 import bashIcon from "../assets/images/bash-icon.svg";
-import tanstackQueryIcon from "../assets/images/tanstack-query-icon.png";
+import tanstackQueryIcon from "../assets/images/tanstack-query-icon-small.png";
 import gsapIcon from "../assets/images/gsap-icon.svg";
 import tailwindCSSIcon from "../assets/images/tailwindcss-icon.svg";
 import webpackIcon from "../assets/images/webpack-icon.svg";
