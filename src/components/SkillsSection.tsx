@@ -97,7 +97,7 @@ const SkillsSection = () => {
 	return (
 		<section
 			ref={sectionRef}
-			className="bg-bg-gr-1 flex min-h-[100dvh] w-full items-center 
+			className="bg-bg-gr-1 flex min-h-[min(100dvh,1080px)] w-full items-center 
 		px-[16px] py-[64px] sm:p-[64px]">
 			<div
 				className="bg-gr-icy flex flex-col items-start gap-[24px] rounded-[16px] 
