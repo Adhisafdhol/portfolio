@@ -20,6 +20,7 @@ const TechStack: FC<TechStackProps> = ({ techStack }) => {
 						className={`bg-bg-1 flex items-center gap-[16px] rounded-[8px] 
 							px-[24px] py-[16px] sm:px-[32px] sm:py-[16px]`}>
 						<img
+							alt={tech.text + " icon"}
 							className="h-[16px] w-[16px] sm:h-[32px] sm:w-[32ppx] md:h-[40px]
 							md:w-[40px] lg:h-[48px] lg:w-[48px]"
 							src={tech.icon.dark}
