@@ -10,17 +10,21 @@ const ProjectPreviewBox: FC<ProjectPreviewProps> = ({ previews }) => {
 	const [activeIndex, setActiveIndex] = useState<number>(0);
 
 	return (
-		<section className="flex flex-col items-center gap-[32px]">
-			<div className="flex flex-col gap-[32px] rounded-[8px] rounded-b-[32px]">
+		<section
+			className="flex w-[min(72ch,100%)] flex-col items-center
+			gap-[32px]">
+			<div
+				className="flex  w-full flex-col gap-[32px] rounded-[8px]
+				rounded-b-[32px]">
 				<ul
-					className="text-h6 aspect-[16/9] w-[min(72ch,100%)] max-w-[72ch]
+					className="text-h6  aspect-[16/9] w-[min(72ch,100%)] max-w-[72ch]
 				overflow-hidden">
 					{previews.map((preview: ProjectPreview, index: number) => {
 						return (
 							<li
 								key={index}
 								className={
-									"h-full w-full rounded-[8px]" +
+									"bg-bg-3 flex h-full w-full rounded-[8px]" +
 									(activeIndex === index ? " z-10" : " z-[-1] hidden")
 								}>
 								{preview.type.split("/")[0] === "image" ? (
