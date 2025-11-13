@@ -11,7 +11,7 @@ const ProjectPreviewBox: FC<ProjectPreviewProps> = ({ previews }) => {
 
 	return (
 		<section
-			className="flex w-[min(72ch,100%)] flex-col items-center
+			className="text-h6 flex w-[min(72ch,100%)] flex-col items-center
 			gap-[32px]">
 			<div
 				className="flex  w-full flex-col gap-[32px] rounded-[8px]
